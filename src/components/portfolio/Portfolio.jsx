@@ -7,7 +7,8 @@ import IMG4 from "../../assets/portfolio4.jpg";
 import IMG5 from "../../assets/portfolio5.png";
 import IMG6 from "../../assets/portfolio6.jpg";
 
-const professionalProjects = [
+const allProjects = [
+	// Professional Projects (unique)
 	{
 		title: "TheTrumpToken (Kryptomind)",
 		description: [
@@ -70,63 +71,11 @@ const professionalProjects = [
 			"Tools: Elasticsearch, Kibana, Filebeat, Metricbeat, Ansible, Docker Compose, Ubuntu, AWS EC2, S3 (optional).",
 			"[Screenshots: Kibana dashboards, container logs, host metrics, Nginx visualizations, Metricbeat dashboards] (Add images if available)",
 		],
-		image: IMG6, // Placeholder, replace with actual screenshot if available
+		image: IMG6,
 		github: "#",
 		demo: "#",
 	},
-];
-
-const personalProjects = [
-	{
-		title: "The Trump Token – Crypto Token Platform",
-		description: [
-			"Deployed backend services in a custom VPC using ECS and ECR, with GitHub Actions automating Docker image builds and ECS updates.",
-			"Hosted React frontend via AWS Amplify with Route 53-managed domain and SSL for secure, scalable access.",
-		],
-		image: IMG1,
-		github: "#",
-		demo: "#",
-	},
-	{
-		title: "ResQ – Restoration Scheduling Platform",
-		description: [
-			"Built and maintained infrastructure for containerized Node.js backend in ECS with secure networking and NAT access.",
-			"Deployed frontend to AWS Amplify and configured health checks and uptime monitoring for production APIs.",
-		],
-		image: IMG2,
-		github: "#",
-		demo: "#",
-	},
-	{
-		title: "Trumart – Crypto-based E-commerce Marketplace",
-		description: [
-			"Provisioned Terraform-based infrastructure for MongoDB, ECS backend, and Route 53 DNS, ensuring scalable and secure deployments.",
-			"Deployed and maintained the frontend with Amplify; configured reverse proxy at /storefronts for seamless user experience.",
-		],
-		image: IMG3,
-		github: "#",
-		demo: "#",
-	},
-	{
-		title: "Tajir Media – Web3 Blockchain Ecosystem",
-		description: [
-			"Automated backend deployment on EC2 using Ansible and Bash scripts; secured traffic with ACM-based SSL certificates.",
-			"Frontend deployed using Amplify with continuous deployment from GitHub for rapid iteration.",
-		],
-		image: IMG4,
-		github: "#",
-		demo: "#",
-	},
-	{
-		title: "BitRock – Decentralized Wallet App",
-		description: [
-			"Deployed wallet backend on ECS with IAM and ECR permissions for secure, scalable operations.",
-			"Integrated Klever and Trust Wallet APIs; hosted frontend via Amplify with branch previews for agile development.",
-		],
-		image: IMG5,
-		github: "#",
-		demo: "#",
-	},
+	// Personal/Open Source Projects (unique, not duplicating above)
 	{
 		title: "WFH Monitoring with Dockerfiles",
 		description: [
@@ -179,49 +128,8 @@ const Portfolio = () => {
 		<section id="portfolio">
 			<h5>My Recent Work</h5>
 			<h2>Portfolio</h2>
-
-			<h3 style={{ marginTop: "2em", marginBottom: "1em" }}>
-				Professional Projects
-			</h3>
 			<div className="container portfolio__container">
-				{professionalProjects.map((project, idx) => (
-					<article className="portfolio__item" key={project.title}>
-						<div className="portfolio__item-image">
-							<img src={project.image} alt={project.title} />
-						</div>
-						<h3>{project.title}</h3>
-						<ul style={{ paddingLeft: "1.2em", marginBottom: "1em" }}>
-							{project.description.map((desc, i) => (
-								<li key={i}>{desc}</li>
-							))}
-						</ul>
-						<div className="portfolio__item-cta">
-							<a
-								href={project.github}
-								className="btn"
-								target="_blank"
-								rel="noreferrer"
-							>
-								Github
-							</a>
-							<a
-								href={project.demo}
-								className="btn btn-primary"
-								target="_blank"
-								rel="noreferrer"
-							>
-								Live Demo
-							</a>
-						</div>
-					</article>
-				))}
-			</div>
-
-			<h3 style={{ marginTop: "2.5em", marginBottom: "1em" }}>
-				Personal & Open Source Projects
-			</h3>
-			<div className="container portfolio__container">
-				{personalProjects.map((project, idx) => (
+				{allProjects.map((project, idx) => (
 					<article className="portfolio__item" key={project.title}>
 						<div className="portfolio__item-image">
 							<img src={project.image} alt={project.title} />
