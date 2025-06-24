@@ -7,10 +7,8 @@ const Experience = () => {
     <section id="experience">
       <h5>What Skills I have</h5>
       <h2>My Experience</h2>
-
-      {/* DevOps Engineer Experience Section */}
-      <div className="experience__container">
-        <div className="experience__devops">
+      <div className="experience__container" style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="experience__devops" style={{ maxWidth: 800, width: '100%' }}>
           <h3>DevOps Engineer | Kryptomind LLC <span style={{fontWeight:400, fontSize:'0.9em'}}>(May 2024 – Present)</span></h3>
           <div className="experience__content">
             <ul style={{paddingLeft: '1.2em'}}>
