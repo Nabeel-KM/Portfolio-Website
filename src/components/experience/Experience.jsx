@@ -35,6 +35,46 @@ const Experience = () => {
               <li><BsPatchCheckFill className="experience__details-icon" /> Authored comprehensive technical documentation and conducted internal DevOps workshops to upskill team members and promote a culture of automation and reliability.</li>
             </ul>
           </div>
+
+          {/* Key DevOps Projects Section */}
+          <div style={{marginTop: '2.5em'}}>
+            <h3 style={{fontWeight: 600, marginBottom: '1em'}}>Key DevOps Projects</h3>
+            <div style={{marginBottom: '1.5em'}}>
+              <h4 style={{marginBottom: '0.2em'}}>The Trump Token – Crypto Token Platform</h4>
+              <ul style={{paddingLeft: '1.2em'}}>
+                <li>Deployed backend services in a custom VPC using ECS and ECR, with GitHub Actions automating Docker image builds and ECS updates.</li>
+                <li>Hosted React frontend via AWS Amplify with Route 53-managed domain and SSL for secure, scalable access.</li>
+              </ul>
+            </div>
+            <div style={{marginBottom: '1.5em'}}>
+              <h4 style={{marginBottom: '0.2em'}}>ResQ – Restoration Scheduling Platform</h4>
+              <ul style={{paddingLeft: '1.2em'}}>
+                <li>Built and maintained infrastructure for containerized Node.js backend in ECS with secure networking and NAT access.</li>
+                <li>Deployed frontend to AWS Amplify and configured health checks and uptime monitoring for production APIs.</li>
+              </ul>
+            </div>
+            <div style={{marginBottom: '1.5em'}}>
+              <h4 style={{marginBottom: '0.2em'}}>Trumart – Crypto-based E-commerce Marketplace</h4>
+              <ul style={{paddingLeft: '1.2em'}}>
+                <li>Provisioned Terraform-based infrastructure for MongoDB, ECS backend, and Route 53 DNS, ensuring scalable and secure deployments.</li>
+                <li>Deployed and maintained the frontend with Amplify; configured reverse proxy at /storefronts for seamless user experience.</li>
+              </ul>
+            </div>
+            <div style={{marginBottom: '1.5em'}}>
+              <h4 style={{marginBottom: '0.2em'}}>Tajir Media – Web3 Blockchain Ecosystem</h4>
+              <ul style={{paddingLeft: '1.2em'}}>
+                <li>Automated backend deployment on EC2 using Ansible and Bash scripts; secured traffic with ACM-based SSL certificates.</li>
+                <li>Frontend deployed using Amplify with continuous deployment from GitHub for rapid iteration.</li>
+              </ul>
+            </div>
+            <div style={{marginBottom: '1.5em'}}>
+              <h4 style={{marginBottom: '0.2em'}}>BitRock – Decentralized Wallet App</h4>
+              <ul style={{paddingLeft: '1.2em'}}>
+                <li>Deployed wallet backend on ECS with IAM and ECR permissions for secure, scalable operations.</li>
+                <li>Integrated Klever and Trust Wallet APIs; hosted frontend via Amplify with branch previews for agile development.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
