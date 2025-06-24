@@ -65,6 +65,28 @@
     color: var(--color-light);
 }
 
+.about__skills-section {
+  background: #f7f7f7;
+  color: #222;
+  border-radius: 8px;
+  padding: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.about__skills-section h4 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.about__skills-section ul {
+  columns: 2;
+  font-size: 1em;
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
 @media screen and (max-width: 1024px) {
     .about__container{
         grid-template-columns: 1fr;
@@ -100,4 +122,7 @@
         margin: 1.5rem 0;
     }
 
+    .about__skills-section ul {
+    columns: 1;
+  }
 }

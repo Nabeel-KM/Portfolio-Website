@@ -53,26 +53,9 @@ const About = () => {
       </div>
 
       {/* Technical Skills Section */}
-      <div
-        style={{
-          background: "#f7f7f7",
-          borderRadius: "8px",
-          padding: "1.2em",
-          marginBottom: "1.5em",
-        }}
-      >
-        <h4 style={{ marginBottom: "0.5em", fontWeight: 600 }}>
-          Technical Skills
-        </h4>
-        <ul
-          style={{
-            columns: 2,
-            fontSize: "1em",
-            margin: 0,
-            paddingLeft: "1.2em",
-            listStyle: "disc",
-          }}
-        >
+      <div className="about__skills-section">
+        <h4>Technical Skills</h4>
+        <ul>
           <li>
             <b>Cloud Platforms:</b> AWS (EC2, ECS, ECR, S3, Lambda, VPC, IAM, Route 53, Amplify), DigitalOcean
           </li>
