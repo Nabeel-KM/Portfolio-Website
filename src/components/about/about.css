@@ -94,6 +94,34 @@
   margin-bottom: 0.5em;
 }
 
+.about__education-section {
+  background: var(--color-bg-variant);
+  color: var(--color-light);
+  border-radius: 1rem;
+  padding: 1.2em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.about__education-section h4 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.about__education-section ul {
+  font-size: 1em;
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.about__education-section li {
+  margin-bottom: 0.5em;
+}
+
 @media screen and (max-width: 1024px) {
     .about__container{
         grid-template-columns: 1fr;

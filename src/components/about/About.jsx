@@ -101,6 +101,19 @@ const About = () => {
         </ul>
       </div>
 
+      {/* Education Section */}
+      <div className="about__education-section">
+        <h4>Education</h4>
+        <ul>
+          <li>
+            <b>Diploma in Computer Science – DevOps & Serverless</b> | Systems Limited | 2023 – 2024
+          </li>
+          <li>
+            <b>BSc Mechanical Engineering</b> | UET Lahore | 2013 – 2017
+          </li>
+        </ul>
+      </div>
+
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
