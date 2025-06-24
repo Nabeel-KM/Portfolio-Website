@@ -9,8 +9,11 @@ const Header = () => {
     <header id="main">
       <div className="container header_container">
         <h5>Hello I'm</h5>
-        <h1>Aadetya Chauhan</h1>
-        <h5 className="text-light">Fullstack Developer</h5>
+        <h1>Nabeel Sarfraz</h1>
+        <h5 className="text-light">DevOps Engineer</h5>
+        <div style={{fontSize: '0.95em', color: '#b0b0b0', margin: '0.5em 0 1em 0', fontWeight: 500}}>
+          AWS · Terraform · Ansible · Docker · GitHub Actions · Python · CI/CD · CloudWatch · Linux · Git
+        </div>
         <CTA />
         <HeaderSocial/>
         <div className="me">
