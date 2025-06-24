@@ -66,17 +66,20 @@
 }
 
 .about__skills-section {
-  background: #f7f7f7;
-  color: #222;
-  border-radius: 8px;
-  padding: 1.2em;
+  background: var(--color-bg-variant);
+  color: var(--color-light);
+  border-radius: 1rem;
+  padding: 1.5em 1.2em 1.2em 1.2em;
   margin-bottom: 1.5em;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
 .about__skills-section h4 {
   margin-bottom: 0.5em;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #fff;
+  letter-spacing: 0.5px;
 }
 
 .about__skills-section ul {
@@ -85,6 +88,10 @@
   margin: 0;
   padding-left: 1.2em;
   list-style: disc;
+}
+
+.about__skills-section li {
+  margin-bottom: 0.5em;
 }
 
 @media screen and (max-width: 1024px) {

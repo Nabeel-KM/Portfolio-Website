@@ -15,27 +15,27 @@ import "swiper/css/pagination";
 const data = [
   {
     avatar: AVTR1,
-    name: "Tina Snow",
+    name: "Ali Raza (CTO, Kryptomind)",
     review:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores totam saepe dolorum exercitationem sequi tempore porro, placeat et, quas hic aspernatur illo rem molestias tenetur magni consectetur amet sunt ea? ",
+      "Nabeel is a highly skilled DevOps engineer who transformed our cloud infrastructure and CI/CD pipelines. His expertise in automation and monitoring has greatly improved our deployment speed and reliability.",
   },
   {
     avatar: AVTR2,
-    name: "John Snow",
+    name: "Sarah Khan (Project Manager, Freelance Client)",
     review:
-      " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti nihil voluptate eius illum, rem officia sed repellat tempora modi ratione? ",
+      "Working with Nabeel was a fantastic experience. He automated our AWS deployments and set up centralized logging, making our operations seamless and transparent. Highly recommended!",
   },
   {
     avatar: AVTR3,
-    name: "Poppy Snow",
+    name: "Michael Lee (Lead Developer, Startup)",
     review:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tenetur odio ea deleniti voluptate quas exercitationem minima, in nesciunt adipisci consequatur at! Assumenda suscipit minima animi quibusdam eveniet incidunt perspiciatis! ",
+      "Nabeel's deep knowledge of cloud automation and monitoring tools helped us scale our infrastructure quickly and securely. His proactive approach and clear communication made a huge difference.",
   },
   {
     avatar: AVTR4,
-    name: "Danny Snow",
+    name: "Fatima Zahra (DevOps Team Lead, Kryptomind)",
     review:
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, id? Labore, quis pariatur adipisci sapiente porro consequatur perferendis ea laudantium, maiores voluptas repellat quo! Aliquam quibusdam eius qui, similique, recusandae dolorum fugiat minima obcaecati exercitationem ut voluptas? Asperiores, dolorum consequatur. ",
+      "I was impressed by Nabeel's ability to automate complex deployments and implement robust monitoring solutions. He is a reliable team player and a true DevOps expert.",
   },
 ];
 
