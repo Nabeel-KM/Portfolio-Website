@@ -1,72 +1,216 @@
-.experience__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.experience__header {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.experience__container > div {
+.experience__header h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.experience__period {
+    font-style: italic;
+    color: var(--color-light);
+    margin-bottom: 1.5rem;
+}
+
+.experience__summary {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.experience__summary p {
+    color: var(--color-light);
+    line-height: 1.6;
+}
+
+.experience__achievements {
+    margin-bottom: 2rem;
+}
+
+.experience__achievements h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+}
+
+.experience__achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience__achievement-card {
     background: var(--color-bg-variant);
-    padding: 2.4rem 5rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.experience__achievement-card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    transform: translateY(-5px);
+}
+
+.experience__achievement-card h5 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.8rem;
+}
+
+.experience__achievement-card p {
+    color: var(--color-light);
+    font-size: 0.9rem;
+}
+
+.experience__categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.experience__category-btn {
+    background: var(--color-bg-variant);
+    color: var(--color-white);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.experience__category-btn:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.experience__category-btn.active {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+.experience__category-icon {
+    font-size: 1.2rem;
+}
+
+.experience__container {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    background: var(--color-bg-variant);
+    padding: 2rem;
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--transition);
 }
 
-.experience__container > div :hover {
-    background-color: transparent;
+.experience__container:hover {
+    background: transparent;
     border-color: var(--color-primary-variant);
-    cursor: default;
 }
 
-.experience__container > div h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--color-primary);
+.experience__content ul {
+    list-style: none;
+    padding: 0;
 }
 
-.experience__content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
-}
-
-.experience__details{
+.experience__item {
     display: flex;
     gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
 }
 
 .experience__details-icon {
-    margin-top: 6px;
+    color: var(--color-primary);
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.experience__item p {
+    color: var(--color-light);
+    line-height: 1.6;
+}
+
+.experience__technologies {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.experience__technologies h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+}
+
+.experience__tech-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience__tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience__tech-icon {
+    font-size: 2rem;
     color: var(--color-primary);
 }
 
+.experience__tech-item span {
+    color: var(--color-light);
+    font-size: 0.9rem;
+}
+
 @media screen and (max-width: 1024px) {
-
-    .experience__container{
-        grid-template-columns: 1fr;
+    .experience__achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .experience__container >div {
-        width: 80%;
-        padding: 2rem;
-        margin: 0 auto;
-    }
-
-    .experience__content{
-        padding: 1rem;
+    
+    .experience__container {
+        padding: 1.5rem;
     }
 }
 
 @media screen and (max-width: 600px) {
-
-    .experience__container{
-        gap: 1rem;
+    .experience__achievements-grid {
+        grid-template-columns: 1fr;
     }
-
-    .experience__container > div {
-        width: 100%;
-        padding: 2rem 1rem;
-        
+    
+    .experience__categories {
+        flex-direction: column;
+        align-items: center;
     }
-
+    
+    .experience__category-btn {
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .experience__container {
+        padding: 1rem;
+    }
+    
+    .experience__tech-grid {
+        gap: 1.5rem;
+    }
 }
