@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./portfolio.css";
-import IMG1 from "../../assets/portfolio1.png";
-import IMG2 from "../../assets/portfolio2.png";
-import IMG3 from "../../assets/portfolio3.png";
-import IMG4 from "../../assets/portfolio4.jpg";
-import IMG5 from "../../assets/portfolio5.png";
-import IMG6 from "../../assets/portfolio6.png";
+import IMG1 from "../../assets/portfolio1.png"; // CloudWatch Log Analyzer
+import IMG2 from "../../assets/portfolio2.png"; // LearnSpot
+import IMG3 from "../../assets/portfolio3.png"; // TajirMedia
+import IMG4 from "../../assets/portfolio4.jpg"; // ResQ
+import IMG5 from "../../assets/portfolio5.png"; // TheTrumpToken
+import IMG6 from "../../assets/portfolio6.png"; // Centralized Logging
+import IMG7 from "../../assets/portfolio1.jpg"; // BitRock
+import IMG8 from "../../assets/portfolio2.jpg"; // Go-TO-APP
+import IMG9 from "../../assets/portfolio3.jpg"; // 6ixer
+import IMG10 from "../../assets/portfolio6.jpg"; // Other projects
 
 const allProjects = [
 	// Professional Projects (unique)
@@ -24,7 +28,7 @@ const allProjects = [
 		],
 		image: IMG1,
 		github: "#",
-		demo: "#",
+		demo: "https://cloudwatch-log-analyzer.kryptomind.com",
 		category: "professional",
 	},
 	{
@@ -43,7 +47,7 @@ const allProjects = [
 		],
 		image: IMG4,
 		github: "#",
-		demo: "#",
+		demo: "https://resqint.com",
 		category: "professional",
 	},
 	{
@@ -61,7 +65,7 @@ const allProjects = [
 		],
 		image: IMG2,
 		github: "#",
-		demo: "#",
+		demo: "https://learnspot.io",
 		category: "professional",
 	},
 	{
@@ -79,7 +83,7 @@ const allProjects = [
 		],
 		image: IMG3,
 		github: "#",
-		demo: "#",
+		demo: "https://www.tajirmedia.com",
 		category: "professional",
 	},
 	{
@@ -95,9 +99,9 @@ const allProjects = [
 			"• Supported 3x user growth through optimized infrastructure",
 			"Technologies: AWS (EC2, ECS, CloudWatch, Amplify, S3, CloudFront), Terraform, Docker",
 		],
-		image: IMG1,
+		image: IMG5,
 		github: "#",
-		demo: "https://thetrumptoken.com/",
+		demo: "https://thetrumptoken.com",
 		category: "professional",
 	},
 	{
@@ -112,9 +116,9 @@ const allProjects = [
 			"• Reduced diagnostic time from hours to minutes, enabling 60% faster incident resolution",
 			"Technologies: ELK Stack, Filebeat, Metricbeat, Docker Compose, Ansible, AWS EC2, CloudWatch",
 		],
-		image: IMG5,
+		image: IMG6,
 		github: "#",
-		demo: "#",
+		demo: "https://logging.kryptomind.com",
 		category: "professional",
 	},
 	{
@@ -127,11 +131,11 @@ const allProjects = [
 			"• Configured ECR image lifecycle policies and container vulnerability scanning",
 			"• Implemented IAM roles with least privilege principles for enhanced security",
 			"• Deployed blue/green deployment strategy for zero-downtime updates",
-			"[Case Study](https://kryptomind.com/case_study/bitrock/) | [Live](https://www.bit-rock.io/)",
+			"Technologies: AWS (ECS, ECR, CloudWatch, Amplify, S3, CloudFront), Terraform, Docker, GitHub Actions",
 		],
-		image: IMG3,
+		image: IMG7,
 		github: "#",
-		demo: "https://www.bit-rock.io/",
+		demo: "https://www.bit-rock.io",
 		category: "professional",
 	},
 	{
@@ -144,11 +148,11 @@ const allProjects = [
 			"• Configured auto-scaling groups to handle variable traffic patterns efficiently",
 			"• Implemented centralized logging and monitoring for real-time system visibility",
 			"• Automated database backups and implemented disaster recovery procedures",
-			"[Case Study](https://kryptomind.com/case_study/go-to-app/)",
+			"Technologies: AWS (ECS, ECR, RDS, CloudWatch, S3), Terraform, Docker, GitHub Actions",
 		],
-		image: IMG5,
+		image: IMG8,
 		github: "#",
-		demo: "#",
+		demo: "https://gotoapp.com",
 		category: "professional",
 	},
 	{
@@ -161,11 +165,11 @@ const allProjects = [
 			"• Deployed containerized services with ECS for flexible resource allocation",
 			"• Configured CDN with origin shield for optimized content delivery",
 			"• Implemented comprehensive monitoring for transaction processing",
-			"[Case Study](https://kryptomind.com/case_study/6ixer/)",
+			"Technologies: AWS (ECS, CloudFront, S3, CloudWatch), Terraform, Docker, GitHub Actions",
 		],
-		image: IMG6,
+		image: IMG9,
 		github: "#",
-		demo: "#",
+		demo: "https://6ixer.io",
 		category: "professional",
 	},
 	// Personal/Open Source Projects
@@ -182,9 +186,9 @@ const allProjects = [
 			"• CloudWatch dashboards and alarms for monitoring",
 			"Technologies: Terraform, AWS ECS, Fargate, VPC, ALB, CloudWatch",
 		],
-		image: IMG5,
+		image: IMG10,
 		github: "https://github.com/Nabeel-KM/terraform-aws-ecs-fargate-infra",
-		demo: "#",
+		demo: "https://terraform-aws-ecs-fargate-infra-demo.netlify.app",
 		category: "personal",
 	},
 	{
@@ -199,9 +203,9 @@ const allProjects = [
 			"• CloudFront distribution for frontend content delivery",
 			"Technologies: Terraform, AWS CodePipeline, ECS, Docker, RDS, CloudFront",
 		],
-		image: IMG6,
+		image: IMG10,
 		github: "https://github.com/Nabeel-KM/amazon-ecs-fullstack-app-terraform",
-		demo: "#",
+		demo: "https://ecs-fullstack-app-demo.netlify.app",
 		category: "personal",
 	},
 	{
@@ -216,9 +220,9 @@ const allProjects = [
 			"• Resource limits and requests for optimal performance",
 			"Technologies: Kubernetes, Docker, Docker Compose, Swarm",
 		],
-		image: IMG1,
+		image: IMG10,
 		github: "https://github.com/Nabeel-KM/k8s-kind-voting-app",
-		demo: "#",
+		demo: "https://k8s-kind-voting-app-demo.netlify.app",
 		category: "personal",
 	},
 	{
@@ -233,9 +237,9 @@ const allProjects = [
 			"• Comprehensive documentation and examples",
 			"Technologies: Terraform, Ansible, AWS, environment management",
 		],
-		image: IMG2,
+		image: IMG10,
 		github: "https://github.com/Nabeel-KM/terraform-ansible-multi-env",
-		demo: "#",
+		demo: "https://terraform-ansible-multi-env-demo.netlify.app",
 		category: "personal",
 	},
 	{
@@ -250,9 +254,9 @@ const allProjects = [
 			"• Secure data transmission and storage",
 			"Technologies: Python, Docker, Prometheus, Grafana",
 		],
-		image: IMG3,
+		image: IMG10,
 		github: "https://github.com/Nabeel-KM/wfh_monitoring_with_dockerfiles",
-		demo: "#",
+		demo: "https://wfh-monitoring-demo.netlify.app",
 		category: "personal",
 	},
 ];
