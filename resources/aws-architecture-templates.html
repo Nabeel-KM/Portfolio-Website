@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Architecture Templates - Nabeel Sarfraz</title>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: #1a365d;
+        }
+        
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .template {
+            margin-bottom: 40px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        
+        .template h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        
+        .template-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+        }
+        
+        .template-description {
+            margin-bottom: 20px;
+        }
+        
+        .template-components {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid #2563eb;
+        }
+        
+        .template-components h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+        }
+        
+        .contact {
+            margin-top: 20px;
+        }
+        
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>AWS Architecture Templates</h1>
+    
+    <div class="template">
+        <h2>Scalable Web Application Architecture</h2>
+        <img src="../src/assets/project-images/architecture-template-1.png" alt="Scalable Web Application Architecture" class="template-image">
+        <div class="template-description">
+            <p>This architecture template provides a highly available, scalable web application setup using AWS services. It's designed for applications that need to handle variable traffic with automatic scaling capabilities.</p>
+        </div>
+        <div class="template-components">
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>Route 53</strong> - DNS management and routing</li>
+                <li><strong>CloudFront</strong> - Content delivery network for global distribution</li>
+                <li><strong>S3</strong> - Static asset storage</li>
+                <li><strong>ALB</strong> - Application Load Balancer for traffic distribution</li>
+                <li><strong>Auto Scaling Group</strong> - Dynamic scaling of EC2 instances</li>
+                <li><strong>RDS</strong> - Managed relational database with read replicas</li>
+                <li><strong>ElastiCache</strong> - In-memory caching for performance</li>
+                <li><strong>CloudWatch</strong> - Monitoring and alerting</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="template">
+        <h2>Containerized Microservices Architecture</h2>
+        <img src="../src/assets/project-images/architecture-template-2.png" alt="Containerized Microservices Architecture" class="template-image">
+        <div class="template-description">
+            <p>This template demonstrates a containerized microservices architecture using AWS ECS. It's ideal for applications that require independent scaling and deployment of different components.</p>
+        </div>
+        <div class="template-components">
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>ECR</strong> - Container image repository</li>
+                <li><strong>ECS</strong> - Container orchestration service</li>
+                <li><strong>Fargate</strong> - Serverless compute engine for containers</li>
+                <li><strong>ALB</strong> - Application Load Balancer with path-based routing</li>
+                <li><strong>API Gateway</strong> - API management and request routing</li>
+                <li><strong>DynamoDB</strong> - NoSQL database for microservices</li>
+                <li><strong>SNS/SQS</strong> - Asynchronous communication between services</li>
+                <li><strong>X-Ray</strong> - Distributed tracing for microservices</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="template">
+        <h2>Serverless Web Application</h2>
+        <img src="../src/assets/project-images/architecture-template-3.png" alt="Serverless Web Application" class="template-image">
+        <div class="template-description">
+            <p>This serverless architecture template eliminates the need to manage servers while providing high availability and automatic scaling. It's perfect for applications with variable or unpredictable workloads.</p>
+        </div>
+        <div class="template-components">
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>CloudFront</strong> - Content delivery and caching</li>
+                <li><strong>S3</strong> - Static website hosting</li>
+                <li><strong>API Gateway</strong> - RESTful API endpoint</li>
+                <li><strong>Lambda</strong> - Serverless compute functions</li>
+                <li><strong>DynamoDB</strong> - NoSQL database</li>
+                <li><strong>Cognito</strong> - User authentication and authorization</li>
+                <li><strong>CloudWatch</strong> - Monitoring and logging</li>
+                <li><strong>Step Functions</strong> - Workflow orchestration</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>These architecture templates are provided as a starting point for your AWS infrastructure design. Each template can be customized to meet your specific requirements.</p>
+        <div class="contact">
+            <p>Need help implementing these architectures? <a href="mailto:nabntan@gmail.com">Contact me</a> for professional DevOps services.</p>
+        </div>
+        <p>&copy; 2025 Nabeel Sarfraz. All rights reserved.</p>
+    </div>
+</body>
+</html>
