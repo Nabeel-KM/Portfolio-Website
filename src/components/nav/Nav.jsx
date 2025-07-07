@@ -6,6 +6,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
 import { BiMessageSquareDetail } from "react-icons/bi";
+import { FaBriefcase } from "react-icons/fa";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#main");
@@ -35,6 +36,10 @@ const Nav = () => {
       <a href="#contact" onClick={() => setActiveNav("#contact")}
         className={activeNav === "#contact" ? "active" : ""}>
         <BiMessageSquareDetail />
+      </a>
+      <a href="/upwork-profile.html" target="_blank" rel="noopener noreferrer"
+        className={activeNav === "upwork" ? "active" : ""}>
+        <FaBriefcase />
       </a>
     </nav>
   );
