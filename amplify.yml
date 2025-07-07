@@ -11,12 +11,6 @@ frontend:
     baseDirectory: build
     files:
       - '**/*'
-  customHeaders:
-    - pattern: '/upwork-profile.html'
-      headers:
-        - key: 'Content-Type'
-          value: 'text/html'
-    - pattern: '/resources/**/*'
-      headers:
-        - key: 'Content-Type'
-          value: 'text/html'
+  cache:
+    paths:
+      - node_modules/**/*

@@ -7,7 +7,8 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "react-icons": "^4.6.0",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "fs-extra": "^11.1.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -17,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node copy-static-files.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

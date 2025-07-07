@@ -115,7 +115,33 @@
     font-weight: 600;
 }
 
-/* Core Competencies Section */
+/* Career Objective Section */
+.about__career-objective {
+    background-color: var(--color-bg-variant);
+    padding: 2rem;
+    border-radius: 2rem;
+    margin: 2rem 0;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.about__career-objective:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.about__career-objective h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.about__career-objective p {
+    text-align: center;
+    color: var(--color-light);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
 .about__competencies-section {
     margin-bottom: 3rem;
 }
