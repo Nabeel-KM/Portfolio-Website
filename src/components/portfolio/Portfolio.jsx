@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import "./portfolio.css";
-import IMG1 from "../../assets/portfolio1.png"; // CloudWatch Log Analyzer
-import IMG2 from "../../assets/portfolio2.png"; // LearnSpot
-import IMG3 from "../../assets/portfolio3.png"; // TajirMedia
-import IMG4 from "../../assets/portfolio4.jpg"; // ResQ
-import IMG5 from "../../assets/portfolio5.png"; // TheTrumpToken
-import IMG6 from "../../assets/portfolio6.png"; // Centralized Logging
-import IMG7 from "../../assets/portfolio1.jpg"; // BitRock
-import IMG8 from "../../assets/portfolio2.jpg"; // Go-TO-APP
-import IMG9 from "../../assets/portfolio3.jpg"; // 6ixer
-import IMG10 from "../../assets/portfolio6.jpg"; // Other projects
+
+// Import project images
+import cloudwatchLogAnalyzer from "../../assets/project-images/cloudwatch-log-analyzer.png";
+import resqImage from "../../assets/project-images/resq.png";
+import learnspotImage from "../../assets/project-images/learnspot.png";
+import tajirmediaImage from "../../assets/project-images/tajirmedia.png";
+import trumptokenImage from "../../assets/project-images/trumptoken.png";
+import centralizedLoggingImage from "../../assets/project-images/centralized-logging.png";
+import bitrockImage from "../../assets/project-images/bitrock.png";
+import gotoappImage from "../../assets/project-images/gotoapp.png";
+import sixerImage from "../../assets/project-images/6ixer.png";
+import terraformAwsEcsImage from "../../assets/project-images/terraform-aws-ecs.png";
+import amazonEcsFullstackImage from "../../assets/project-images/amazon-ecs-fullstack.png";
+import k8sKindVotingImage from "../../assets/project-images/k8s-kind-voting.png";
+import terraformAnsibleImage from "../../assets/project-images/terraform-ansible.png";
+import wfhMonitoringImage from "../../assets/project-images/wfh-monitoring.png";
 
 const allProjects = [
 	// Professional Projects (unique)
@@ -26,9 +32,9 @@ const allProjects = [
 			"• Security Best Practices: Secure AWS credential handling with proper IAM role support",
 			"Technologies: Python, Streamlit, Pandas, AWS SDK (boto3), Docker, CloudWatch Logs API, AWS IAM",
 		],
-		image: IMG1,
+		image: cloudwatchLogAnalyzer,
 		github: "#",
-		demo: "https://cloudwatch-log-analyzer.kryptomind.com",
+		demo: "#",
 		category: "professional",
 	},
 	{
@@ -45,7 +51,7 @@ const allProjects = [
 			"• Optimized RDS parameter groups and EC2 performance, resolving high database load issues",
 			"Technologies: AWS (ECS, ECR, EC2, RDS, ALB, VPC, Amplify, S3, CloudFront), Terraform, GitHub Actions, Docker, Nginx, Ansible, Twilio",
 		],
-		image: IMG4,
+		image: resqImage,
 		github: "#",
 		demo: "https://resqint.com",
 		category: "professional",
@@ -63,9 +69,9 @@ const allProjects = [
 			"• Configured ECS clusters with ECR integration for containerized application deployment",
 			"Technologies: AWS (ECS, ECR, ALB, Amplify, S3, CloudFront), Terraform, GitHub Actions, Docker",
 		],
-		image: IMG2,
+		image: learnspotImage,
 		github: "#",
-		demo: "https://learnspot.io",
+		demo: "#",
 		category: "professional",
 	},
 	{
@@ -81,7 +87,7 @@ const allProjects = [
 			"• Set up ECS services with ECR repositories for containerized application components",
 			"Technologies: AWS (ECS, ECR, RDS, ALB, Amplify, S3, CloudFront), Terraform, GitHub Actions, Docker",
 		],
-		image: IMG3,
+		image: tajirmediaImage,
 		github: "#",
 		demo: "https://www.tajirmedia.com",
 		category: "professional",
@@ -99,7 +105,7 @@ const allProjects = [
 			"• Supported 3x user growth through optimized infrastructure",
 			"Technologies: AWS (EC2, ECS, CloudWatch, Amplify, S3, CloudFront), Terraform, Docker",
 		],
-		image: IMG5,
+		image: trumptokenImage,
 		github: "#",
 		demo: "https://thetrumptoken.com",
 		category: "professional",
@@ -116,13 +122,13 @@ const allProjects = [
 			"• Reduced diagnostic time from hours to minutes, enabling 60% faster incident resolution",
 			"Technologies: ELK Stack, Filebeat, Metricbeat, Docker Compose, Ansible, AWS EC2, CloudWatch",
 		],
-		image: IMG6,
+		image: centralizedLoggingImage,
 		github: "#",
-		demo: "https://logging.kryptomind.com",
+		demo: "#",
 		category: "professional",
 	},
 	{
-		title: "BitRock (Kryptomind)",
+		title: "BitRock Crypto Wallet",
 		description: [
 			"Crypto wallet app for storing and retrieving digital assets with strict security requirements.",
 			"DevOps Contributions:",
@@ -133,13 +139,13 @@ const allProjects = [
 			"• Deployed blue/green deployment strategy for zero-downtime updates",
 			"Technologies: AWS (ECS, ECR, CloudWatch, Amplify, S3, CloudFront), Terraform, Docker, GitHub Actions",
 		],
-		image: IMG7,
+		image: bitrockImage,
 		github: "#",
 		demo: "https://www.bit-rock.io",
 		category: "professional",
 	},
 	{
-		title: "Go-TO-APP (Kryptomind)",
+		title: "Go-TO-APP",
 		description: [
 			"Mobile application platform for on-demand services and local business discovery.",
 			"DevOps Contributions:",
@@ -150,13 +156,13 @@ const allProjects = [
 			"• Automated database backups and implemented disaster recovery procedures",
 			"Technologies: AWS (ECS, ECR, RDS, CloudWatch, S3), Terraform, Docker, GitHub Actions",
 		],
-		image: IMG8,
+		image: gotoappImage,
 		github: "#",
 		demo: "https://gotoapp.com",
 		category: "professional",
 	},
 	{
-		title: "6ixer (Kryptomind)",
+		title: "6ixer NFT Marketplace",
 		description: [
 			"NFT marketplace platform with high-volume transaction processing requirements.",
 			"DevOps Contributions:",
@@ -167,7 +173,7 @@ const allProjects = [
 			"• Implemented comprehensive monitoring for transaction processing",
 			"Technologies: AWS (ECS, CloudFront, S3, CloudWatch), Terraform, Docker, GitHub Actions",
 		],
-		image: IMG9,
+		image: sixerImage,
 		github: "#",
 		demo: "https://6ixer.io",
 		category: "professional",
@@ -186,9 +192,9 @@ const allProjects = [
 			"• CloudWatch dashboards and alarms for monitoring",
 			"Technologies: Terraform, AWS ECS, Fargate, VPC, ALB, CloudWatch",
 		],
-		image: IMG10,
+		image: terraformAwsEcsImage,
 		github: "https://github.com/Nabeel-KM/terraform-aws-ecs-fargate-infra",
-		demo: "https://terraform-aws-ecs-fargate-infra-demo.netlify.app",
+		demo: "#",
 		category: "personal",
 	},
 	{
@@ -203,9 +209,9 @@ const allProjects = [
 			"• CloudFront distribution for frontend content delivery",
 			"Technologies: Terraform, AWS CodePipeline, ECS, Docker, RDS, CloudFront",
 		],
-		image: IMG10,
+		image: amazonEcsFullstackImage,
 		github: "https://github.com/Nabeel-KM/amazon-ecs-fullstack-app-terraform",
-		demo: "https://ecs-fullstack-app-demo.netlify.app",
+		demo: "#",
 		category: "personal",
 	},
 	{
@@ -220,9 +226,9 @@ const allProjects = [
 			"• Resource limits and requests for optimal performance",
 			"Technologies: Kubernetes, Docker, Docker Compose, Swarm",
 		],
-		image: IMG10,
+		image: k8sKindVotingImage,
 		github: "https://github.com/Nabeel-KM/k8s-kind-voting-app",
-		demo: "https://k8s-kind-voting-app-demo.netlify.app",
+		demo: "#",
 		category: "personal",
 	},
 	{
@@ -237,9 +243,9 @@ const allProjects = [
 			"• Comprehensive documentation and examples",
 			"Technologies: Terraform, Ansible, AWS, environment management",
 		],
-		image: IMG10,
+		image: terraformAnsibleImage,
 		github: "https://github.com/Nabeel-KM/terraform-ansible-multi-env",
-		demo: "https://terraform-ansible-multi-env-demo.netlify.app",
+		demo: "#",
 		category: "personal",
 	},
 	{
@@ -254,9 +260,9 @@ const allProjects = [
 			"• Secure data transmission and storage",
 			"Technologies: Python, Docker, Prometheus, Grafana",
 		],
-		image: IMG10,
+		image: wfhMonitoringImage,
 		github: "https://github.com/Nabeel-KM/wfh_monitoring_with_dockerfiles",
-		demo: "https://wfh-monitoring-demo.netlify.app",
+		demo: "#",
 		category: "personal",
 	},
 ];
