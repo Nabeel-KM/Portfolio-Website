@@ -1,0 +1,6 @@
+# Serve these files as static files
+/upwork-profile.html /upwork-profile.html 200
+/resources/* /resources/:splat 200
+
+# Handle all other routes with the React app
+/* /index.html 200
