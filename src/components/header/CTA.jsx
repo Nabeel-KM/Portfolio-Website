@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDownload, FaEnvelope } from "react-icons/fa";
-// Use the original CV file to avoid issues with spaces in filenames
-import CV from "../../assets/cv.pdf";
+// Use the updated resume file
+import CV from "../../assets/Nabeel_Sarfraz_DevOps_Engineer_Resume.pdf";
 
 const CTA = () => {
   return (

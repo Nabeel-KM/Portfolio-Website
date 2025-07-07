@@ -16,7 +16,7 @@ const About = () => {
       
       <div className="about__profile-header">
         <h3>Nabeel Sarfraz</h3>
-        <h4>Senior DevOps Engineer</h4>
+        <h4>DevOps Engineer</h4>
         
         <div className="about__contact-info">
           <span role="img" aria-label="location">📍</span>{" "}
@@ -69,7 +69,7 @@ const About = () => {
 
           <div className="about__summary">
             <p>
-              Results-driven DevOps Engineer with 1.5+ years of specialized experience in AWS cloud infrastructure, CI/CD automation, and containerization. 
+              Results-driven DevOps Engineer with 1.5+ years of specialized experience in AWS cloud infrastructure, CI/CD automation, and containerization technologies. 
               <strong> Exceptional troubleshooting skills</strong> with proven ability to diagnose and resolve complex system issues, reducing mean time to recovery by 65%.
             </p>
             <p>
@@ -85,6 +85,14 @@ const About = () => {
             Let's Talk
           </a>
         </div>
+      </div>
+
+      {/* Career Objective */}
+      <div className="about__career-objective">
+        <h3>Career Objective</h3>
+        <p>
+          To leverage my DevOps expertise in building resilient, scalable cloud infrastructure while continuously expanding my knowledge in emerging technologies like Kubernetes, serverless architectures, and infrastructure automation.
+        </p>
       </div>
 
       {/* Core Competencies Section */}
@@ -107,7 +115,7 @@ const About = () => {
           <div className="about__competency-card">
             <FaTools className="about__competency-icon" />
             <h4>CI/CD Pipelines</h4>
-            <p>GitHub Actions, Jenkins, AWS CodePipeline, zero-downtime deployments, automated testing</p>
+            <p>GitHub Actions, Jenkins, zero-downtime deployments, automated testing</p>
           </div>
           
           <div className="about__competency-card">
@@ -138,7 +146,7 @@ const About = () => {
           <div className="about__skill-category">
             <h4>Cloud Platforms</h4>
             <ul>
-              <li>AWS (EC2, ECS, ECR, S3, Lambda, VPC, IAM, Route 53, Amplify, CloudFront)</li>
+              <li>AWS (EC2, ECS, ECR, S3, Lambda, VPC, IAM, Route 53, Amplify, CloudFront, CloudWatch)</li>
               <li>DigitalOcean</li>
             </ul>
           </div>
@@ -164,7 +172,7 @@ const About = () => {
             <ul>
               <li>GitHub Actions</li>
               <li>Jenkins</li>
-              <li>AWS CodePipeline, CodeBuild, CodeDeploy</li>
+              <li>Docker, Docker Compose</li>
             </ul>
           </div>
           
@@ -182,15 +190,15 @@ const About = () => {
             <ul>
               <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>
               <li>Filebeat, Metricbeat</li>
-              <li>AWS CloudWatch</li>
-              <li>Uptime Kuma, Grafana</li>
+              <li>AWS CloudWatch (Logs, Metrics, Alarms)</li>
+              <li>Grafana</li>
             </ul>
           </div>
           
           <div className="about__skill-category">
             <h4>Programming & Scripting</h4>
             <ul>
-              <li>Python (Flask, automation scripts)</li>
+              <li>Python (boto3, Pandas, Streamlit)</li>
               <li>Bash</li>
               <li>YAML, JSON, HCL (Terraform)</li>
             </ul>
@@ -201,7 +209,6 @@ const About = () => {
             <ul>
               <li>MySQL, PostgreSQL</li>
               <li>MongoDB</li>
-              <li>Microsoft SQL Server</li>
               <li>AWS RDS</li>
             </ul>
           </div>
@@ -217,11 +224,11 @@ const About = () => {
           </div>
           
           <div className="about__skill-category">
-            <h4>Diagnostic Tools</h4>
+            <h4>Web & Application Servers</h4>
             <ul>
-              <li>tcpdump, netstat, nmap</li>
-              <li>strace, htop, iotop</li>
-              <li>curl, wget, dig, traceroute</li>
+              <li>Nginx, Apache</li>
+              <li>Application Load Balancers</li>
+              <li>Path-based routing</li>
             </ul>
           </div>
           
@@ -230,7 +237,6 @@ const About = () => {
             <ul>
               <li>Resource rightsizing</li>
               <li>Auto-scaling strategies</li>
-              <li>Spot instances</li>
               <li>S3 lifecycle policies</li>
             </ul>
           </div>
@@ -240,7 +246,6 @@ const About = () => {
             <ul>
               <li>Git</li>
               <li>GitHub, GitLab</li>
-              <li>Branching strategies, code reviews</li>
             </ul>
           </div>
         </div>
@@ -262,18 +267,18 @@ const About = () => {
           </div>
           
           <div className="about__education-item">
-            <h4>AWS Certified Solutions Architect Associate</h4>
-            <p>In Progress - Expected July 2025</p>
+            <h4>AWS Technical Essentials</h4>
+            <p>AWS Training and Certification</p>
           </div>
           
           <div className="about__education-item">
-            <h4>HashiCorp Certified: Terraform Associate</h4>
-            <p>HashiCorp</p>
+            <h4>Docker and Kubernetes: The Complete Guide</h4>
+            <p>Udemy</p>
           </div>
           
           <div className="about__education-item">
-            <h4>Docker Certified Associate</h4>
-            <p>Docker, Inc.</p>
+            <h4>Terraform for AWS - Beginner to Advanced</h4>
+            <p>Udemy</p>
           </div>
         </div>
       </div>

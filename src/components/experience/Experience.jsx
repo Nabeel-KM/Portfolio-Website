@@ -30,7 +30,7 @@ const Experience = () => {
       "Led cost optimization initiatives by implementing resource rightsizing, auto-scaling, spot instances, and S3 lifecycle policies, resulting in significant cloud spend reduction (35%)."
     ],
     cicd: [
-      "Engineered 10+ advanced CI/CD pipelines (GitHub Actions, Jenkins, AWS CodePipeline) for React, Flask, and Laravel applications, automating build, test, deployment, and blue/green ECS/EC2 service refreshes for zero-downtime releases.",
+      "Engineered 10+ advanced CI/CD pipelines (GitHub Actions, Jenkins) for React, Flask, and Laravel applications, automating build, test, deployment, and blue/green ECS/EC2 service refreshes for zero-downtime releases.",
       "Developed and maintained robust Ansible playbooks for automated server provisioning, Docker/LAMP/WordPress stack setup, and scheduled task management, reducing manual intervention and errors.",
       "Built AWS Lambda functions for dynamic S3 image resizing, and integrated Lambda with CloudWatch and SNS for real-time RDP session monitoring and automated team notifications.",
       "Automated secrets management and environment variable injection using AWS Secrets Manager and SSM Parameter Store, enhancing security, compliance, and deployment flexibility.",
@@ -58,7 +58,7 @@ const Experience = () => {
       "Enhanced security and compliance by integrating IAM policy management, secrets management, and SSL/TLS automation into infrastructure and deployment workflows.",
       "Implemented secure infrastructure with encryption at rest and in transit for all sensitive data.",
       "Deployed containerized microservices with service mesh for enhanced security and traffic management.",
-      "Configured AWS WAF and Shield for DDoS protection and web application security.",
+      "Created IAM users with limited access policies restricted to S3 bucket operations only.",
       "Implemented automated security testing that identified and resolved critical vulnerabilities before production deployment."
     ],
     troubleshooting: [
@@ -94,7 +94,7 @@ const Experience = () => {
       <h2>My Experience</h2>
       
       <div className="experience__header">
-        <h3>Senior DevOps Engineer | Kryptomind LLC</h3>
+        <h3>DevOps Engineer | Kryptomind LLC</h3>
         <p className="experience__period">May 2023 – Present (1.5+ years)</p>
         
         <div className="experience__summary">

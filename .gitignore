@@ -22,8 +22,20 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-Nabeel Sarfraz*.pdf
-Nabeel Sarfraz*.docx
-Nabeel Sarfraz*.html
-Nabeel Sarfraz*.md
-resume-style.css
+# Resume files in root directory
+/Nabeel Sarfraz*.pdf
+/Nabeel Sarfraz*.docx
+/Nabeel Sarfraz*.html
+/Nabeel Sarfraz*.md
+/Nabeel_Sarfraz*.pdf
+/Nabeel_Sarfraz*.docx
+/Nabeel_Sarfraz*.html
+/resume-style.css
+/ResQ_Project_Summary.md
+/resq-architecture.html
+/ResQ_Platform_Architecture.png
+/ResQ-Architecture-updated.drawio.pdf
+/Nabeel_Sarfraz_DevOps_Resume_Updated.md
+
+# Keep the resume in assets folder
+!/src/assets/Nabeel_Sarfraz_DevOps_Engineer_Resume.pdf
