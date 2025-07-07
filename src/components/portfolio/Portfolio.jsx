@@ -53,7 +53,7 @@ const allProjects = [
 		],
 		image: resqImage,
 		github: "#",
-		demo: "https://resqint.com",
+		demo: "#", // Private project based on case study
 		category: "professional",
 	},
 	{
@@ -71,7 +71,7 @@ const allProjects = [
 		],
 		image: learnspotImage,
 		github: "#",
-		demo: "#",
+		demo: "#", // Private project based on case study
 		category: "professional",
 	},
 	{
@@ -89,7 +89,7 @@ const allProjects = [
 		],
 		image: tajirmediaImage,
 		github: "#",
-		demo: "https://www.tajirmedia.com",
+		demo: "https://www.tajirmedia.com/", // Confirmed from case study
 		category: "professional",
 	},
 	{
@@ -107,7 +107,7 @@ const allProjects = [
 		],
 		image: trumptokenImage,
 		github: "#",
-		demo: "https://thetrumptoken.com",
+		demo: "https://thetrumptoken.com/", // Confirmed from case study
 		category: "professional",
 	},
 	{
@@ -124,7 +124,7 @@ const allProjects = [
 		],
 		image: centralizedLoggingImage,
 		github: "#",
-		demo: "#",
+		demo: "#", // Internal tool
 		category: "professional",
 	},
 	{
@@ -141,7 +141,7 @@ const allProjects = [
 		],
 		image: bitrockImage,
 		github: "#",
-		demo: "https://www.bit-rock.io",
+		demo: "https://www.bit-rock.io/", // Confirmed from case study
 		category: "professional",
 	},
 	{
@@ -158,7 +158,7 @@ const allProjects = [
 		],
 		image: gotoappImage,
 		github: "#",
-		demo: "https://gotoapp.com",
+		demo: "#", // Private project based on case study
 		category: "professional",
 	},
 	{
@@ -175,7 +175,7 @@ const allProjects = [
 		],
 		image: sixerImage,
 		github: "#",
-		demo: "https://6ixer.io",
+		demo: "#", // Private project based on case study
 		category: "professional",
 	},
 	// Personal/Open Source Projects
