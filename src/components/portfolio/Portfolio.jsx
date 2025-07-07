@@ -53,7 +53,7 @@ const allProjects = [
 		],
 		image: resqImage,
 		github: "#",
-		demo: "#", // Private project based on case study
+		demo: "https://stg-resq.kryptomind.net/", // Verified URL
 		category: "professional",
 	},
 	{
@@ -71,7 +71,7 @@ const allProjects = [
 		],
 		image: learnspotImage,
 		github: "#",
-		demo: "#", // Private project based on case study
+		demo: "https://pre-prod.learnspot.co.uk/", // Verified URL
 		category: "professional",
 	},
 	{
@@ -158,7 +158,7 @@ const allProjects = [
 		],
 		image: gotoappImage,
 		github: "#",
-		demo: "#", // Private project based on case study
+		demo: "https://go-to.ky/", // Verified URL
 		category: "professional",
 	},
 	{
@@ -175,7 +175,7 @@ const allProjects = [
 		],
 		image: sixerImage,
 		github: "#",
-		demo: "#", // Private project based on case study
+		demo: "https://6ixer.kryptomind.net/", // Verified URL
 		category: "professional",
 	},
 	// Personal/Open Source Projects
