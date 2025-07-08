@@ -168,7 +168,7 @@ const UpworkProfile = () => {
                 </div>
               </div>
               <div className="case-study-cta">
-                <a href="https://stg-resq.kryptomind.net/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">View Live Project</a>
+                <a href="https://stg-resq.kryptomind.net/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">View Live Project</a>
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ const UpworkProfile = () => {
                 </div>
               </div>
               <div className="case-study-cta">
-                <a href="https://thetrumptoken.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">View Live Project</a>
+                <a href="https://thetrumptoken.com/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">View Live Project</a>
               </div>
             </div>
           </div>
