@@ -207,7 +207,242 @@ const CloudCostOptimization = () => {
           </div>
         </div>
         
-        {/* Additional categories would be added here */}
+        <div className="category">
+          <h2>Database Optimization</h2>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[11] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(11)}
+            >
+              {checkedItems[11] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Right-size RDS instances</div>
+              <div className="checklist-item-description">Analyze CloudWatch metrics to identify underutilized RDS instances and resize them appropriately.</div>
+              <div className="potential-savings">Potential savings: 20-30% on RDS costs</div>
+              <div className="implementation-difficulty medium">Medium</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[12] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(12)}
+            >
+              {checkedItems[12] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Purchase Reserved Instances for RDS</div>
+              <div className="checklist-item-description">For databases with predictable usage, purchase RDS Reserved Instances to reduce costs.</div>
+              <div className="potential-savings">Potential savings: 30-60% compared to On-Demand</div>
+              <div className="implementation-difficulty easy">Easy</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[13] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(13)}
+            >
+              {checkedItems[13] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Use Aurora Serverless for variable workloads</div>
+              <div className="checklist-item-description">Consider Aurora Serverless for applications with variable or unpredictable database usage patterns.</div>
+              <div className="potential-savings">Potential savings: 30-50% for variable workloads</div>
+              <div className="implementation-difficulty hard">Hard</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[14] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(14)}
+            >
+              {checkedItems[14] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Optimize DynamoDB provisioned capacity</div>
+              <div className="checklist-item-description">Use DynamoDB auto-scaling or on-demand pricing mode to match capacity with actual usage patterns.</div>
+              <div className="potential-savings">Potential savings: 15-40% on DynamoDB costs</div>
+              <div className="implementation-difficulty medium">Medium</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[15] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(15)}
+            >
+              {checkedItems[15] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Implement RDS storage auto-scaling</div>
+              <div className="checklist-item-description">Enable storage auto-scaling for RDS instances to avoid over-provisioning storage upfront.</div>
+              <div className="potential-savings">Potential savings: 10-20% on RDS storage costs</div>
+              <div className="implementation-difficulty easy">Easy</div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="category">
+          <h2>Networking Optimization</h2>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[16] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(16)}
+            >
+              {checkedItems[16] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Use VPC endpoints for AWS services</div>
+              <div className="checklist-item-description">Implement VPC endpoints to reduce NAT gateway and data transfer costs when accessing AWS services.</div>
+              <div className="potential-savings">Potential savings: 30-50% on data transfer costs</div>
+              <div className="implementation-difficulty medium">Medium</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[17] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(17)}
+            >
+              {checkedItems[17] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Optimize NAT gateway usage</div>
+              <div className="checklist-item-description">Consolidate NAT gateways where possible and ensure they're only used when necessary.</div>
+              <div className="potential-savings">Potential savings: 20-40% on NAT gateway costs</div>
+              <div className="implementation-difficulty medium">Medium</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[18] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(18)}
+            >
+              {checkedItems[18] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Use CloudFront to reduce data transfer costs</div>
+              <div className="checklist-item-description">Implement CloudFront for content delivery to reduce data transfer costs and improve performance.</div>
+              <div className="potential-savings">Potential savings: 40-60% on data transfer costs</div>
+              <div className="implementation-difficulty medium">Medium</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[19] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(19)}
+            >
+              {checkedItems[19] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Optimize Elastic IP usage</div>
+              <div className="checklist-item-description">Release unused Elastic IPs as they incur charges when not associated with running instances.</div>
+              <div className="potential-savings">Potential savings: Variable</div>
+              <div className="implementation-difficulty easy">Easy</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[20] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(20)}
+            >
+              {checkedItems[20] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Use AWS Transit Gateway for network consolidation</div>
+              <div className="checklist-item-description">Implement Transit Gateway to simplify network architecture and reduce VPN connection costs.</div>
+              <div className="potential-savings">Potential savings: 15-30% on networking costs</div>
+              <div className="implementation-difficulty hard">Hard</div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="category">
+          <h2>General Optimization</h2>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[21] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(21)}
+            >
+              {checkedItems[21] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Implement resource tagging strategy</div>
+              <div className="checklist-item-description">Tag all resources with appropriate metadata (owner, project, environment) to track and allocate costs accurately.</div>
+              <div className="potential-savings">Potential savings: Indirect through better cost allocation</div>
+              <div className="implementation-difficulty medium">Medium</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[22] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(22)}
+            >
+              {checkedItems[22] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Set up AWS Budgets and alerts</div>
+              <div className="checklist-item-description">Configure AWS Budgets to monitor spending and receive alerts when costs exceed thresholds.</div>
+              <div className="potential-savings">Potential savings: Indirect through better cost control</div>
+              <div className="implementation-difficulty easy">Easy</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[23] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(23)}
+            >
+              {checkedItems[23] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Use AWS Cost Explorer for regular cost analysis</div>
+              <div className="checklist-item-description">Regularly review AWS Cost Explorer reports to identify cost trends and optimization opportunities.</div>
+              <div className="potential-savings">Potential savings: Indirect through informed decision-making</div>
+              <div className="implementation-difficulty easy">Easy</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[24] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(24)}
+            >
+              {checkedItems[24] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Implement automated resource scheduling</div>
+              <div className="checklist-item-description">Use AWS Instance Scheduler or custom scripts to automatically start and stop non-production resources during off-hours.</div>
+              <div className="potential-savings">Potential savings: 40-70% on non-production resources</div>
+              <div className="implementation-difficulty medium">Medium</div>
+            </div>
+          </div>
+          
+          <div className="checklist-item">
+            <div 
+              className={`checkbox ${checkedItems[25] ? 'checked' : ''}`} 
+              onClick={() => toggleCheckbox(25)}
+            >
+              {checkedItems[25] && <FaCheck className="check-icon" />}
+            </div>
+            <div className="checklist-item-content">
+              <div className="checklist-item-title">Review and delete unused resources</div>
+              <div className="checklist-item-description">Regularly audit and remove unused resources like idle load balancers, unused AMIs, and orphaned snapshots.</div>
+              <div className="potential-savings">Potential savings: 5-15% of overall costs</div>
+              <div className="implementation-difficulty easy">Easy</div>
+            </div>
+          </div>
+        </div>
         
         <div className="resource-footer">
           <p>This checklist is provided as a guide to help you optimize your AWS cloud costs. The potential savings are estimates and may vary based on your specific environment and usage patterns.</p>
