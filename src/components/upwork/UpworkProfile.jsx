@@ -31,7 +31,7 @@ const UpworkProfile = () => {
             <h2>AWS DevOps Engineer & Cloud Infrastructure Specialist</h2>
             <p className="upwork-tagline">Building scalable, secure, and automated cloud infrastructure that reduces costs and accelerates development</p>
             <div className="upwork-hero-cta">
-              <a href="#upwork-contact" className="upwork-btn upwork-btn-hire-me">
+              <a href="#upwork-contact" className="upwork-btn upwork-btn-outline">
                 <FaEnvelope className="upwork-btn-icon" /> Hire Me
               </a>
               <a href="#upwork-portfolio" className="upwork-btn upwork-btn-secondary">

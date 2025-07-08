@@ -148,18 +148,15 @@
   font-size: 1rem;
 }
 
-/* Hire Me Button - Special styling */
-.upwork-btn-hire-me {
-  background-color: #ffffff;
-  color: #1f1f38;
-  font-weight: 700;
-  border: 2px solid #1f1f38;
+.upwork-btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
 }
 
-.upwork-btn-hire-me:hover {
-  background-color: #1f1f38;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+.upwork-btn-primary:hover {
+  background-color: var(--color-white);
+  color: var(--color-bg);
+  border-color: transparent;
 }
 
 .upwork-btn-secondary {
