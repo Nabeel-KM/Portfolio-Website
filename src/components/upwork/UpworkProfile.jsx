@@ -301,54 +301,54 @@ const UpworkProfile = () => {
           <div className="resources-grid">
             <div className="resource-card">
               <div className="resource-icon">
-                <FaCodeBranch />
-              </div>
-              <h3>CI/CD Pipeline Templates</h3>
-              <p>Production-ready CI/CD pipeline configurations for GitHub Actions, Jenkins, and AWS CodePipeline.</p>
-              <div className="resource-tags">
-                <span>GitHub Actions</span>
-                <span>Jenkins</span>
-                <span>AWS CodePipeline</span>
-              </div>
-              <div className="resource-cta">
-                <a href="https://github.com/Nabeel-KM/cicd-templates" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
-                  <FaGithub className="upwork-btn-icon" /> View on GitHub
-                </a>
-              </div>
-            </div>
-            
-            <div className="resource-card">
-              <div className="resource-icon">
                 <FaCloud />
               </div>
-              <h3>AWS Architecture Diagrams</h3>
-              <p>Reference architectures for scalable, secure, and cost-optimized AWS deployments.</p>
+              <h3>AWS Architecture Templates</h3>
+              <p>Reference architectures for scalable, secure, and cost-optimized AWS deployments including web applications, microservices, and serverless designs.</p>
               <div className="resource-tags">
                 <span>Serverless</span>
                 <span>Microservices</span>
                 <span>High Availability</span>
               </div>
               <div className="resource-cta">
-                <a href="https://github.com/Nabeel-KM/aws-architecture-templates" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
-                  <FaGithub className="upwork-btn-icon" /> View Diagrams
+                <a href="/resources/aws-architecture-templates.html" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaCloud className="upwork-btn-icon" /> View Templates
                 </a>
               </div>
             </div>
             
             <div className="resource-card">
               <div className="resource-icon">
-                <FaCubes />
+                <FaCodeBranch />
               </div>
-              <h3>Docker & Kubernetes Configs</h3>
-              <p>Optimized Dockerfiles and Kubernetes manifests for various application stacks.</p>
+              <h3>CI/CD Pipeline Blueprints</h3>
+              <p>Production-ready CI/CD pipeline configurations for GitHub Actions, including React deployment, Docker + ECS, and Terraform infrastructure.</p>
               <div className="resource-tags">
+                <span>GitHub Actions</span>
                 <span>Docker</span>
-                <span>Kubernetes</span>
-                <span>Helm Charts</span>
+                <span>Terraform</span>
               </div>
               <div className="resource-cta">
-                <a href="https://github.com/Nabeel-KM/container-templates" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
-                  <FaGithub className="upwork-btn-icon" /> View Configs
+                <a href="/resources/ci-cd-pipeline-blueprints.html" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaCodeBranch className="upwork-btn-icon" /> View Blueprints
+                </a>
+              </div>
+            </div>
+            
+            <div className="resource-card">
+              <div className="resource-icon">
+                <FaChartLine />
+              </div>
+              <h3>Cloud Cost Optimization</h3>
+              <p>Comprehensive checklist with 25 actionable steps to optimize your AWS cloud costs, potentially reducing your bill by 20-40%.</p>
+              <div className="resource-tags">
+                <span>Cost Savings</span>
+                <span>Best Practices</span>
+                <span>AWS</span>
+              </div>
+              <div className="resource-cta">
+                <a href="/resources/cloud-cost-optimization-checklist.html" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaChartLine className="upwork-btn-icon" /> View Checklist
                 </a>
               </div>
             </div>
