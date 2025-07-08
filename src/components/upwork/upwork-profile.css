@@ -150,12 +150,13 @@
 
 .upwork-btn-primary {
   background-color: var(--color-primary);
-  color: var(--color-bg);
+  color: #000000;
+  font-weight: 700;
 }
 
 .upwork-btn-primary:hover {
   background-color: var(--color-white);
-  color: var(--color-bg);
+  color: #000000;
   border-color: transparent;
 }
 
