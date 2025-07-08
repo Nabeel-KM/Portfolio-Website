@@ -39,3 +39,4 @@ yarn-error.log*
 
 # Keep the resume in assets folder
 !/src/assets/Nabeel_Sarfraz_DevOps_Engineer_Resume.pdf
+/src/assests/Nabeel Sarfraz DevOps Resume Final.pdf
