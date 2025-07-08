@@ -311,9 +311,9 @@ const UpworkProfile = () => {
                 <span>High Availability</span>
               </div>
               <div className="resource-cta">
-                <a href="/resources/aws-architecture-templates.html" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                <Link to="/resources/aws-architecture" className="upwork-btn upwork-btn-outline">
                   <FaCloud className="upwork-btn-icon" /> View Templates
-                </a>
+                </Link>
               </div>
             </div>
             
@@ -329,9 +329,9 @@ const UpworkProfile = () => {
                 <span>Terraform</span>
               </div>
               <div className="resource-cta">
-                <a href="/resources/ci-cd-pipeline-blueprints.html" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                <Link to="/resources/ci-cd-pipelines" className="upwork-btn upwork-btn-outline">
                   <FaCodeBranch className="upwork-btn-icon" /> View Blueprints
-                </a>
+                </Link>
               </div>
             </div>
             
@@ -347,9 +347,9 @@ const UpworkProfile = () => {
                 <span>AWS</span>
               </div>
               <div className="resource-cta">
-                <a href="/resources/cloud-cost-optimization-checklist.html" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                <Link to="/resources/cost-optimization" className="upwork-btn upwork-btn-outline">
                   <FaChartLine className="upwork-btn-icon" /> View Checklist
-                </a>
+                </Link>
               </div>
             </div>
           </div>
