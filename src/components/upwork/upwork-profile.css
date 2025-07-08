@@ -154,7 +154,7 @@
 }
 
 .upwork-btn-primary:hover {
-  background-color: rgba(15,23,42,.2);
+  background-color: var(--color-white);
   color: var(--color-bg);
   border-color: transparent;
 }
