@@ -1,7 +1,7 @@
 header {
     min-height: 100vh;
     padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     overflow: hidden;
 }
 
@@ -87,7 +87,8 @@ header {
 .cta {
     display: flex;
     gap: 1.2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
@@ -143,7 +144,7 @@ header {
     gap: 0.8rem;
     position: absolute;
     left: 0;
-    bottom: 3rem;
+    bottom: 2rem;
 }
 
 .header__socials::after {
@@ -156,7 +157,7 @@ header {
 .scroll__down {
     position: absolute;
     right: -2.3rem;
-    bottom: 5rem;
+    bottom: 2rem;
     transform: rotate(90deg);
     font-weight: 300;
     font-size: 0.9rem;
