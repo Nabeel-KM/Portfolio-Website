@@ -154,7 +154,7 @@
 }
 
 .upwork-btn-primary:hover {
-  background-color: var(--color-white);
+  background-color: rgba(15,23,42,.2);
   color: var(--color-bg);
   border-color: transparent;
 }
@@ -464,7 +464,74 @@
   margin-top: 1.5rem;
 }
 
-/* Contact Section */
+/* Resources Section */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background-color: var(--color-bg-variant);
+  border-radius: 2rem;
+  padding: 2.5rem 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  transform: translateY(-10px);
+}
+
+.resource-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.resource-card h3 {
+  margin-bottom: 1rem;
+  color: var(--color-white);
+  font-size: 1.5rem;
+}
+
+.resource-card p {
+  color: var(--color-light);
+  margin-bottom: 1.5rem;
+}
+
+.resource-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.resource-tags span {
+  background-color: rgba(77, 181, 255, 0.1);
+  color: var(--color-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.resource-tags span:hover {
+  background-color: transparent;
+  border-color: var(--color-primary-variant);
+}
+
+.resource-cta {
+  margin-top: auto;
+}
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;

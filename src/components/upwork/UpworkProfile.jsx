@@ -37,6 +37,9 @@ const UpworkProfile = () => {
               <a href="#upwork-portfolio" className="upwork-btn upwork-btn-secondary">
                 <FaChartLine className="upwork-btn-icon" /> View Portfolio
               </a>
+              <a href="#upwork-resources" className="upwork-btn upwork-btn-secondary">
+                <FaCodeBranch className="upwork-btn-icon" /> Technical Resources
+              </a>
               <Link to="/" className="upwork-btn upwork-btn-outline">
                 <FaArrowRight className="upwork-btn-icon" /> Back to Main Site
               </Link>
@@ -288,6 +291,71 @@ const UpworkProfile = () => {
         </div>
       </section>
 
+      {/* Resources Section */}
+      <section id="upwork-resources" className="upwork-section">
+        <div className="upwork-container">
+          <div className="upwork-section-header">
+            <h2>Technical Resources</h2>
+            <p>Explore sample code, architecture diagrams, and technical documentation</p>
+          </div>
+          <div className="resources-grid">
+            <div className="resource-card">
+              <div className="resource-icon">
+                <FaCodeBranch />
+              </div>
+              <h3>CI/CD Pipeline Templates</h3>
+              <p>Production-ready CI/CD pipeline configurations for GitHub Actions, Jenkins, and AWS CodePipeline.</p>
+              <div className="resource-tags">
+                <span>GitHub Actions</span>
+                <span>Jenkins</span>
+                <span>AWS CodePipeline</span>
+              </div>
+              <div className="resource-cta">
+                <a href="https://github.com/Nabeel-KM/cicd-templates" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaGithub className="upwork-btn-icon" /> View on GitHub
+                </a>
+              </div>
+            </div>
+            
+            <div className="resource-card">
+              <div className="resource-icon">
+                <FaCloud />
+              </div>
+              <h3>AWS Architecture Diagrams</h3>
+              <p>Reference architectures for scalable, secure, and cost-optimized AWS deployments.</p>
+              <div className="resource-tags">
+                <span>Serverless</span>
+                <span>Microservices</span>
+                <span>High Availability</span>
+              </div>
+              <div className="resource-cta">
+                <a href="https://github.com/Nabeel-KM/aws-architecture-templates" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaGithub className="upwork-btn-icon" /> View Diagrams
+                </a>
+              </div>
+            </div>
+            
+            <div className="resource-card">
+              <div className="resource-icon">
+                <FaCubes />
+              </div>
+              <h3>Docker & Kubernetes Configs</h3>
+              <p>Optimized Dockerfiles and Kubernetes manifests for various application stacks.</p>
+              <div className="resource-tags">
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>Helm Charts</span>
+              </div>
+              <div className="resource-cta">
+                <a href="https://github.com/Nabeel-KM/container-templates" target="_blank" rel="noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaGithub className="upwork-btn-icon" /> View Configs
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="upwork-contact" className="upwork-section">
         <div className="upwork-container">
@@ -336,6 +404,7 @@ const UpworkProfile = () => {
                 <li><a href="#upwork-summary">About</a></li>
                 <li><a href="#upwork-services">Services</a></li>
                 <li><a href="#upwork-portfolio">Portfolio</a></li>
+                <li><a href="#upwork-resources">Resources</a></li>
                 <li><a href="#upwork-contact">Contact</a></li>
               </ul>
             </div>
