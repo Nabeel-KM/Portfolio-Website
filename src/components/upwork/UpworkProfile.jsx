@@ -1,7 +1,19 @@
 import React from 'react';
 import './upwork-profile.css';
 import { Link } from 'react-router-dom';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { 
+  FaEnvelope, 
+  FaPhone, 
+  FaLinkedin, 
+  FaGithub, 
+  FaCloud, 
+  FaCodeBranch, 
+  FaCubes,
+  FaArrowRight,
+  FaChartLine,
+  FaLock,
+  FaRocket
+} from 'react-icons/fa';
 
 // Import project images
 import resqImage from "../../assets/project-images/resq.png";
@@ -17,11 +29,17 @@ const UpworkProfile = () => {
           <div className="upwork-hero-content">
             <h1>Nabeel Sarfraz</h1>
             <h2>AWS DevOps Engineer & Cloud Infrastructure Specialist</h2>
-            <p className="upwork-tagline">Automating infrastructure, optimizing deployments, reducing costs</p>
+            <p className="upwork-tagline">Building scalable, secure, and automated cloud infrastructure that reduces costs and accelerates development</p>
             <div className="upwork-hero-cta">
-              <a href="#upwork-contact" className="upwork-btn upwork-btn-primary">Hire Me</a>
-              <a href="#upwork-portfolio" className="upwork-btn upwork-btn-secondary">View Portfolio</a>
-              <Link to="/" className="upwork-btn upwork-btn-outline">Back to Main Site</Link>
+              <a href="#upwork-contact" className="upwork-btn upwork-btn-primary">
+                <FaEnvelope className="upwork-btn-icon" /> Hire Me
+              </a>
+              <a href="#upwork-portfolio" className="upwork-btn upwork-btn-secondary">
+                <FaChartLine className="upwork-btn-icon" /> View Portfolio
+              </a>
+              <Link to="/" className="upwork-btn upwork-btn-outline">
+                <FaArrowRight className="upwork-btn-icon" /> Back to Main Site
+              </Link>
             </div>
           </div>
         </div>
@@ -32,6 +50,7 @@ const UpworkProfile = () => {
         <div className="upwork-container">
           <div className="upwork-section-header">
             <h2>Professional Summary</h2>
+            <p>Delivering measurable results through DevOps excellence</p>
           </div>
           <div className="upwork-summary-content">
             <p className="upwork-highlight-text">AWS-certified DevOps Engineer with 1.5+ years of specialized experience in cloud infrastructure, CI/CD automation, and containerization. I help businesses reduce deployment time by up to 70% and infrastructure costs by 35% through automation and optimization strategies.</p>
@@ -68,7 +87,7 @@ const UpworkProfile = () => {
           <div className="upwork-services-grid">
             <div className="upwork-service-card">
               <div className="upwork-service-icon">
-                <i className="fas fa-cloud"></i>
+                <FaCloud />
               </div>
               <h3>Cloud Infrastructure Design</h3>
               <p>Custom AWS architecture design with security, scalability, and cost optimization as core principles.</p>
@@ -82,7 +101,7 @@ const UpworkProfile = () => {
             
             <div className="upwork-service-card">
               <div className="upwork-service-icon">
-                <i className="fas fa-code-branch"></i>
+                <FaCodeBranch />
               </div>
               <h3>CI/CD Pipeline Automation</h3>
               <p>Streamlined deployment workflows that reduce errors and accelerate your release cycles.</p>
@@ -96,7 +115,7 @@ const UpworkProfile = () => {
             
             <div className="upwork-service-card">
               <div className="upwork-service-icon">
-                <i className="fas fa-cubes"></i>
+                <FaCubes />
               </div>
               <h3>Container Orchestration</h3>
               <p>Efficient containerization solutions for consistent, scalable application deployment.</p>
@@ -168,7 +187,9 @@ const UpworkProfile = () => {
                 </div>
               </div>
               <div className="case-study-cta">
-                <a href="https://stg-resq.kryptomind.net/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">View Live Project</a>
+                <a href="https://stg-resq.kryptomind.net/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaRocket className="upwork-btn-icon" /> View Live Project
+                </a>
               </div>
             </div>
           </div>
@@ -215,7 +236,9 @@ const UpworkProfile = () => {
                 </div>
               </div>
               <div className="case-study-cta">
-                <a href="https://thetrumptoken.com/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">View Live Project</a>
+                <a href="https://thetrumptoken.com/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">
+                  <FaRocket className="upwork-btn-icon" /> View Live Project
+                </a>
               </div>
             </div>
           </div>
@@ -275,22 +298,22 @@ const UpworkProfile = () => {
           <div className="contact-grid">
             <div className="contact-info">
               <div className="contact-method">
-                <FaEnvelope size={32} style={{ color: '#2563eb', marginBottom: '15px' }} />
+                <FaEnvelope size={32} />
                 <h3>Email</h3>
                 <p><a href="mailto:nabntan@gmail.com">nabntan@gmail.com</a></p>
               </div>
               <div className="contact-method">
-                <FaPhone size={32} style={{ color: '#2563eb', marginBottom: '15px' }} />
+                <FaPhone size={32} />
                 <h3>Phone</h3>
                 <p><a href="tel:+923444527024">+92-344-4527024</a></p>
               </div>
               <div className="contact-method">
-                <FaLinkedin size={32} style={{ color: '#2563eb', marginBottom: '15px' }} />
+                <FaLinkedin size={32} />
                 <h3>LinkedIn</h3>
                 <p><a href="https://linkedin.com/in/nabeel-sarfraz" target="_blank" rel="noreferrer">linkedin.com/in/nabeel-sarfraz</a></p>
               </div>
               <div className="contact-method">
-                <FaGithub size={32} style={{ color: '#2563eb', marginBottom: '15px' }} />
+                <FaGithub size={32} />
                 <h3>GitHub</h3>
                 <p><a href="https://github.com/Nabeel-KM" target="_blank" rel="noreferrer">github.com/Nabeel-KM</a></p>
               </div>
@@ -301,7 +324,7 @@ const UpworkProfile = () => {
 
       {/* Footer */}
       <footer className="footer">
-        <div className="container">
+        <div className="upwork-container">
           <div className="footer-content">
             <div className="footer-logo">
               <h3>Nabeel Sarfraz</h3>

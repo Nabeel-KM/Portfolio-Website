@@ -1,515 +1,694 @@
-/* Base Styles for Upwork Profile */
+/* Modern Upwork Profile Styles */
+:root {
+  --primary: #0070f3;
+  --primary-dark: #0050b3;
+  --primary-light: #e6f7ff;
+  --secondary: #00c9a7;
+  --dark: #1a202c;
+  --dark-blue: #2d3748;
+  --gray: #718096;
+  --light-gray: #e2e8f0;
+  --lighter-gray: #f7fafc;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
 .upwork-profile-container {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8fafc;
-    min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--lighter-gray);
+  min-height: 100vh;
 }
 
 .upwork-profile-container * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .upwork-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
+/* Typography */
 .upwork-profile-container h1, 
 .upwork-profile-container h2, 
 .upwork-profile-container h3, 
 .upwork-profile-container h4, 
 .upwork-profile-container h5, 
 .upwork-profile-container h6 {
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.5em;
-    color: #1a365d;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: var(--dark);
 }
 
 .upwork-profile-container h1 {
-    font-size: 2.5rem;
+  font-size: 3rem;
+  letter-spacing: -0.025em;
 }
 
 .upwork-profile-container h2 {
-    font-size: 2rem;
+  font-size: 2.25rem;
+  letter-spacing: -0.025em;
 }
 
 .upwork-profile-container h3 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .upwork-profile-container h4 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .upwork-profile-container p {
-    margin-bottom: 1rem;
-    color: #4a5568;
+  margin-bottom: 1.5rem;
+  color: var(--gray);
+  font-size: 1.05rem;
 }
 
 .upwork-profile-container a {
-    color: #3182ce;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
 .upwork-profile-container a:hover {
-    color: #2c5282;
+  color: var(--primary-dark);
 }
 
 .upwork-profile-container ul {
-    list-style: none;
+  list-style: none;
 }
 
 .upwork-profile-container img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
+/* Section Styling */
 .upwork-section {
-    padding: 60px 0;
+  padding: 80px 0;
+}
+
+.upwork-section:nth-child(even) {
+  background-color: var(--white);
 }
 
 .upwork-section-header {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .upwork-section-header h2 {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 15px;
-    color: #2c5282;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--dark);
 }
 
 .upwork-section-header h2:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background-color: #3182ce;
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  border-radius: 2px;
 }
 
 .upwork-section-header p {
-    color: #4a5568;
-    max-width: 700px;
-    margin: 0 auto;
+  color: var(--gray);
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
 }
 
 /* Buttons */
 .upwork-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 1rem;
 }
 
 .upwork-btn-primary {
-    background-color: #3182ce;
-    color: white;
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
 }
 
 .upwork-btn-primary:hover {
-    background-color: #2c5282;
-    color: white;
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .upwork-btn-secondary {
-    background-color: #38b2ac;
-    color: white;
+  background-color: var(--secondary);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
 }
 
 .upwork-btn-secondary:hover {
-    background-color: #2c7a7b;
-    color: white;
+  background-color: #00b396;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .upwork-btn-outline {
-    background-color: transparent;
-    border: 2px solid #3182ce;
-    color: #3182ce;
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
 
 .upwork-btn-outline:hover {
-    background-color: #3182ce;
-    color: white;
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.upwork-btn-icon {
+  margin-right: 8px;
 }
 
 /* Hero Section */
 .upwork-hero {
-    background: linear-gradient(135deg, #2a4365 0%, #3182ce 100%);
-    color: white;
-    padding: 80px 0;
-    text-align: center;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: var(--white);
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.upwork-hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.8;
 }
 
 .upwork-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
 .upwork-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: white;
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .upwork-hero h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.95);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .upwork-tagline {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-    color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .upwork-hero-cta {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 /* Summary Section */
 .upwork-summary {
-    background-color: #f0f9ff;
+  background-color: var(--white);
+  position: relative;
+}
+
+.upwork-summary-content {
+  position: relative;
+  z-index: 1;
 }
 
 .upwork-highlight-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto 30px;
-    text-align: center;
-    color: #2c5282;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: var(--dark-blue);
+  font-weight: 500;
 }
 
 .upwork-key-metrics {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 60px;
 }
 
 .upwork-metric {
-    text-align: center;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 200px;
+  text-align: center;
+  padding: 32px 24px;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid var(--light-gray);
+}
+
+.upwork-metric:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
 .upwork-metric-value {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #3182ce;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1;
 }
 
 .upwork-metric-label {
-    font-size: 1rem;
-    color: #4a5568;
+  font-size: 1.1rem;
+  color: var(--dark-blue);
+  font-weight: 500;
 }
 
 /* Services Section */
 .upwork-services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
 }
 
 .upwork-service-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid #e5e7eb;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid var(--light-gray);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .upwork-service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
 .upwork-service-icon {
-    font-size: 2.5rem;
-    color: #3182ce;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  display: inline-block;
+  background-color: var(--primary-light);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .upwork-service-card h3 {
-    margin-bottom: 15px;
-    color: #2d3748;
+  margin-bottom: 16px;
+  color: var(--dark);
+  font-size: 1.5rem;
+}
+
+.upwork-service-card p {
+  color: var(--gray);
+  margin-bottom: 24px;
 }
 
 .upwork-service-features {
-    margin-top: 20px;
+  margin-top: auto;
 }
 
 .upwork-service-features li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 25px;
-    color: #4a5568;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 28px;
+  color: var(--dark-blue);
 }
 
 .upwork-service-features li:before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #38b2ac;
-    font-weight: bold;
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.upwork-service-features li:last-child {
+  margin-bottom: 0;
 }
 
 /* Case Studies Section */
 .case-study {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    border: 1px solid #e5e7eb;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 48px;
+  border: 1px solid var(--light-gray);
+  transition: var(--transition);
+}
+
+.case-study:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
 }
 
 .case-study-header {
-    background-color: #ebf8ff;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  background-color: var(--primary-light);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .case-study-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    border-radius: 8px;
-    background-color: white;
-    padding: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+  padding: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.case-study-header h3 {
+  margin-bottom: 0;
+  color: var(--dark-blue);
 }
 
 .case-study-content {
-    padding: 25px;
+  padding: 32px;
 }
 
 .case-study-problem,
 .case-study-solution,
 .case-study-results,
 .case-study-tech {
-    margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .case-study-content h4 {
-    color: #3182ce;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.case-study-content h4:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background-color: var(--primary);
+  margin-right: 12px;
+  border-radius: 2px;
 }
 
 .case-study-content ul {
-    padding-left: 20px;
-    margin-bottom: 10px;
+  padding-left: 20px;
+  margin-bottom: 16px;
 }
 
 .case-study-content ul li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 5px;
-    list-style-type: disc;
-    color: #4a5568;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 8px;
+  list-style-type: disc;
+  color: var(--gray);
+}
+
+.case-study-content ul li::marker {
+  color: var(--primary);
 }
 
 .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .tech-tags span {
-    background-color: #e6f6ff;
-    color: #2c5282;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 500;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.tech-tags span:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 .case-study-cta {
-    margin-top: 20px;
+  margin-top: 24px;
 }
 
 /* Contact Section */
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
 }
 
 .contact-method {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 1px solid #e5e7eb;
-    transition: all 0.3s ease;
+  background-color: var(--white);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  border: 1px solid var(--light-gray);
+  transition: var(--transition);
 }
 
 .contact-method:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-method svg {
+  color: var(--primary);
+  margin-bottom: 16px;
 }
 
 .contact-method h3 {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #2d3748;
+  margin: 12px 0;
+  font-size: 1.2rem;
+  color: var(--dark);
 }
 
 .contact-method p {
-    margin: 0;
-    color: #4a5568;
+  margin: 0;
+  color: var(--gray);
+}
+
+.contact-method a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.contact-method a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
 .footer {
-    background-color: #2d3748;
-    color: white;
-    padding: 50px 0 20px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 64px 0 24px;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
 }
 
 .footer-logo h3 {
-    color: white;
-    margin-bottom: 10px;
+  color: var(--white);
+  margin-bottom: 16px;
+  font-size: 1.5rem;
 }
 
 .footer-logo p {
-    color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
 }
 
 .footer-links ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+  font-size: 0.95rem;
 }
 
 .footer-links a:hover {
-    color: white;
+  color: var(--white);
+  transform: translateX(5px);
+  display: inline-block;
 }
 
 .footer-social {
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
 }
 
 .footer-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: white;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white);
+  transition: var(--transition);
 }
 
 .footer-social a:hover {
-    background-color: #3182ce;
+  background-color: var(--primary);
+  transform: translateY(-5px);
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
+  .upwork-section {
+    padding: 60px 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-social {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
-    .upwork-section {
-        padding: 50px 0;
-    }
-    
-    .upwork-hero {
-        padding: 60px 0;
-    }
-    
-    .upwork-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .upwork-services-grid,
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .footer-social {
-        justify-content: flex-start;
-    }
+  .upwork-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .upwork-hero h1 {
+    font-size: 2.75rem;
+  }
+  
+  .upwork-section {
+    padding: 50px 0;
+  }
+  
+  .upwork-section-header {
+    margin-bottom: 40px;
+  }
+  
+  .upwork-services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 @media (max-width: 576px) {
-    .upwork-hero-cta {
-        flex-direction: column;
-    }
-    
-    .upwork-key-metrics {
-        flex-direction: column;
-    }
-    
-    .upwork-metric {
-        width: 100%;
-    }
+  .upwork-hero h1 {
+    font-size: 2.25rem;
+  }
+  
+  .upwork-hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .upwork-hero-cta .upwork-btn {
+    width: 100%;
+  }
+  
+  .upwork-key-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .case-study-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .case-study-content {
+    padding: 24px;
+  }
+  
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
 }
