@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./nav.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
@@ -37,10 +38,9 @@ const Nav = () => {
         className={activeNav === "#contact" ? "active" : ""}>
         <BiMessageSquareDetail />
       </a>
-      <a href="/upwork-profile.html" target="_blank" rel="noopener noreferrer"
-        className={activeNav === "upwork" ? "active" : ""}>
+      <Link to="/upwork-profile" className={activeNav === "upwork" ? "active" : ""}>
         <FaBriefcase />
-      </a>
+      </Link>
     </nav>
   );
 };
