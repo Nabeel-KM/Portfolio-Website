@@ -1,13 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Resources.css';
-import { FaArrowLeft } from 'react-icons/fa';
-
-// Import architecture template images
-// Note: You'll need to move these images to your src/assets directory
-import architectureTemplate1 from '../../assets/project-images/architecture-templates/architecture-template-1.svg';
-import architectureTemplate2 from '../../assets/project-images/architecture-templates/architecture-template-2.svg';
-import architectureTemplate3 from '../../assets/project-images/architecture-templates/architecture-template-3.svg';
+import { FaArrowLeft, FaCloudDownloadAlt } from 'react-icons/fa';
 
 const AwsArchitectureTemplates = () => {
   return (
@@ -22,7 +16,10 @@ const AwsArchitectureTemplates = () => {
         
         <div className="template">
           <h2>Scalable Web Application Architecture</h2>
-          <img src={architectureTemplate1} alt="Scalable Web Application Architecture" className="template-image" />
+          <div className="template-image-placeholder">
+            <FaCloudDownloadAlt />
+            <p>Scalable Web Application Architecture Diagram</p>
+          </div>
           <div className="template-description">
             <p>This architecture template provides a highly available, scalable web application setup using AWS services. It's designed for applications that need to handle variable traffic with automatic scaling capabilities.</p>
           </div>
@@ -43,7 +40,10 @@ const AwsArchitectureTemplates = () => {
         
         <div className="template">
           <h2>Containerized Microservices Architecture</h2>
-          <img src={architectureTemplate2} alt="Containerized Microservices Architecture" className="template-image" />
+          <div className="template-image-placeholder">
+            <FaCloudDownloadAlt />
+            <p>Containerized Microservices Architecture Diagram</p>
+          </div>
           <div className="template-description">
             <p>This template demonstrates a containerized microservices architecture using AWS ECS. It's ideal for applications that require independent scaling and deployment of different components.</p>
           </div>
@@ -64,7 +64,10 @@ const AwsArchitectureTemplates = () => {
         
         <div className="template">
           <h2>Serverless Web Application</h2>
-          <img src={architectureTemplate3} alt="Serverless Web Application" className="template-image" />
+          <div className="template-image-placeholder">
+            <FaCloudDownloadAlt />
+            <p>Serverless Web Application Architecture Diagram</p>
+          </div>
           <div className="template-description">
             <p>This serverless architecture template eliminates the need to manage servers while providing high availability and automatic scaling. It's perfect for applications with variable or unpredictable workloads.</p>
           </div>
