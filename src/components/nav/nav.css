@@ -120,33 +120,20 @@ nav a.active::after {
 /* Media queries */
 @media screen and (min-width: 1200px) {
     nav {
-        flex-direction: column;
-        left: 2rem;
-        transform: translateX(0);
-        bottom: 50%;
-        transform: translateY(50%);
-        border-radius: var(--radius-lg);
-        padding: 1rem 0.5rem;
-    }
-    
-    nav a {
-        margin: 0.2rem 0;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        border-radius: 3rem;
+        padding: 0.7rem 1.7rem;
     }
     
     .nav-label {
-        display: block;
-        left: 3.5rem;
-        bottom: auto;
-        transform: translateX(0);
-    }
-    
-    nav a:hover .nav-label {
-        opacity: 1;
-        transform: translateX(5px);
+        display: none;
     }
     
     .nav-tooltip {
-        display: none;
+        display: block;
     }
 }
 

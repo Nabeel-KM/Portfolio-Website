@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './upwork-profile.css';
 import { Link } from 'react-router-dom';
 import { 
@@ -21,12 +21,63 @@ import trumptokenImage from "../../assets/project-images/trumptoken.png";
 import cloudwatchLogAnalyzer from "../../assets/project-images/cloudwatch-log-analyzer.png";
 
 const UpworkProfile = () => {
+  // Set up animations when component mounts
+  useEffect(() => {
+    const animateElements = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+      
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    };
+    
+    // Add animation classes to elements
+    const sections = document.querySelectorAll('.upwork-section');
+    sections.forEach(section => {
+      section.classList.add('animate-on-scroll');
+    });
+    
+    // Initialize animations
+    animateElements();
+    
+    // Add scroll progress indicator
+    const scrollProgress = document.createElement('div');
+    scrollProgress.className = 'scroll-progress';
+    document.body.appendChild(scrollProgress);
+    
+    // Update scroll progress on scroll
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (document.querySelector('.scroll-progress')) {
+        document.querySelector('.scroll-progress').remove();
+      }
+    };
+  }, []);
+
   return (
     <div className="upwork-profile-container">
       {/* Hero Section */}
       <header className="upwork-hero">
         <div className="upwork-container">
-          <div className="upwork-hero-content">
+          <div className="upwork-hero-content animate-on-scroll">
             <h1>Nabeel Sarfraz</h1>
             <h2>AWS DevOps Engineer & Cloud Infrastructure Specialist</h2>
             <p className="upwork-tagline">Building scalable, secure, and automated cloud infrastructure that reduces costs and accelerates development</p>
@@ -49,33 +100,28 @@ const UpworkProfile = () => {
       </header>
 
       {/* Summary Section */}
-      <section id="upwork-summary" className="upwork-section upwork-summary">
+      <section id="upwork-summary" className="upwork-section">
         <div className="upwork-container">
           <div className="upwork-section-header">
             <h2>Professional Summary</h2>
-            <p>Delivering measurable results through DevOps excellence</p>
+            <p>AWS-certified DevOps Engineer with expertise in cloud infrastructure and automation</p>
           </div>
-          <div className="upwork-summary-content">
-            <p className="upwork-highlight-text">AWS-certified DevOps Engineer with 1.5+ years of specialized experience in cloud infrastructure, CI/CD automation, and containerization. I help businesses reduce deployment time by up to 70% and infrastructure costs by 35% through automation and optimization strategies.</p>
+          
+          <div className="upwork-summary animate-on-scroll">
+            <h3>About Me</h3>
+            <p>I'm a DevOps Engineer and Cloud Infrastructure Specialist with 1.5+ years of experience in designing, implementing, and managing AWS cloud environments. My expertise lies in automating infrastructure deployment, optimizing cloud costs, and implementing robust CI/CD pipelines.</p>
             
-            <div className="upwork-key-metrics">
-              <div className="upwork-metric">
-                <span className="upwork-metric-value">70%</span>
-                <span className="upwork-metric-label">Faster Deployments</span>
-              </div>
-              <div className="upwork-metric">
-                <span className="upwork-metric-value">35%</span>
-                <span className="upwork-metric-label">Cost Reduction</span>
-              </div>
-              <div className="upwork-metric">
-                <span className="upwork-metric-value">99.95%</span>
-                <span className="upwork-metric-label">System Uptime</span>
-              </div>
-              <div className="upwork-metric">
-                <span className="upwork-metric-value">40%</span>
-                <span className="upwork-metric-label">Faster Development</span>
-              </div>
-            </div>
+            <p>I help businesses streamline their development workflows, improve system reliability, and reduce operational overhead through infrastructure automation and cloud-native solutions.</p>
+            
+            <h3>Core Expertise</h3>
+            <ul>
+              <li>AWS cloud architecture and infrastructure design</li>
+              <li>Infrastructure as Code (Terraform, CloudFormation)</li>
+              <li>CI/CD pipeline implementation (GitHub Actions, Jenkins)</li>
+              <li>Containerization and orchestration (Docker, ECS)</li>
+              <li>Monitoring, logging, and observability solutions</li>
+              <li>Cloud cost optimization and resource management</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -84,49 +130,80 @@ const UpworkProfile = () => {
       <section id="upwork-services" className="upwork-section">
         <div className="upwork-container">
           <div className="upwork-section-header">
-            <h2>Services I Offer</h2>
-            <p>Specialized DevOps solutions to optimize your development workflow and infrastructure</p>
+            <h2>Services</h2>
+            <p>Specialized DevOps and cloud infrastructure services to accelerate your business</p>
           </div>
-          <div className="upwork-services-grid">
-            <div className="upwork-service-card">
-              <div className="upwork-service-icon">
-                <FaCloud />
-              </div>
-              <h3>Cloud Infrastructure Design</h3>
-              <p>Custom AWS architecture design with security, scalability, and cost optimization as core principles.</p>
-              <ul className="upwork-service-features">
-                <li>Multi-environment infrastructure setup</li>
-                <li>High-availability architecture</li>
-                <li>Disaster recovery planning</li>
+          
+          <div className="services-grid">
+            <div className="service-card animate-on-scroll">
+              <FaCloud className="service-icon" />
+              <h3>AWS Cloud Architecture</h3>
+              <p>Design and implementation of scalable, secure, and cost-effective AWS cloud infrastructure tailored to your specific business requirements.</p>
+              <ul className="service-features">
+                <li>Multi-environment architecture design</li>
+                <li>High availability and disaster recovery</li>
                 <li>Security best practices implementation</li>
+                <li>Cost optimization strategies</li>
               </ul>
             </div>
             
-            <div className="upwork-service-card">
-              <div className="upwork-service-icon">
-                <FaCodeBranch />
-              </div>
+            <div className="service-card animate-on-scroll">
+              <FaCodeBranch className="service-icon" />
               <h3>CI/CD Pipeline Automation</h3>
-              <p>Streamlined deployment workflows that reduce errors and accelerate your release cycles.</p>
-              <ul className="upwork-service-features">
+              <p>Streamline your development workflow with automated CI/CD pipelines that enable faster, more reliable software delivery.</p>
+              <ul className="service-features">
                 <li>GitHub Actions workflow setup</li>
                 <li>Jenkins pipeline configuration</li>
-                <li>Zero-downtime deployment strategies</li>
                 <li>Automated testing integration</li>
+                <li>Zero-downtime deployment strategies</li>
               </ul>
             </div>
             
-            <div className="upwork-service-card">
-              <div className="upwork-service-icon">
-                <FaCubes />
-              </div>
-              <h3>Container Orchestration</h3>
-              <p>Efficient containerization solutions for consistent, scalable application deployment.</p>
-              <ul className="upwork-service-features">
+            <div className="service-card animate-on-scroll">
+              <FaCubes className="service-icon" />
+              <h3>Containerization & Orchestration</h3>
+              <p>Modernize your applications with containerization and orchestration solutions for improved scalability and resource utilization.</p>
+              <ul className="service-features">
                 <li>Docker containerization</li>
-                <li>AWS ECS cluster management</li>
-                <li>Container security implementation</li>
+                <li>AWS ECS/Fargate implementation</li>
+                <li>Container security hardening</li>
                 <li>Multi-stage build optimization</li>
+              </ul>
+            </div>
+            
+            <div className="service-card animate-on-scroll">
+              <FaLock className="service-icon" />
+              <h3>Cloud Security & Compliance</h3>
+              <p>Implement robust security measures and compliance controls to protect your cloud infrastructure and data.</p>
+              <ul className="service-features">
+                <li>IAM policy implementation</li>
+                <li>Security group configuration</li>
+                <li>Encryption and secrets management</li>
+                <li>Compliance automation</li>
+              </ul>
+            </div>
+            
+            <div className="service-card animate-on-scroll">
+              <FaRocket className="service-icon" />
+              <h3>Infrastructure as Code</h3>
+              <p>Manage your infrastructure through code for improved consistency, version control, and automated provisioning.</p>
+              <ul className="service-features">
+                <li>Terraform module development</li>
+                <li>CloudFormation template creation</li>
+                <li>IaC best practices implementation</li>
+                <li>State management and collaboration</li>
+              </ul>
+            </div>
+            
+            <div className="service-card animate-on-scroll">
+              <FaChartLine className="service-icon" />
+              <h3>Monitoring & Observability</h3>
+              <p>Gain insights into your systems with comprehensive monitoring, logging, and observability solutions.</p>
+              <ul className="service-features">
+                <li>CloudWatch dashboards and alarms</li>
+                <li>ELK stack implementation</li>
+                <li>Log aggregation and analysis</li>
+                <li>Performance optimization</li>
               </ul>
             </div>
           </div>
@@ -137,153 +214,97 @@ const UpworkProfile = () => {
       <section id="upwork-portfolio" className="upwork-section">
         <div className="upwork-container">
           <div className="upwork-section-header">
-            <h2>Featured Projects</h2>
-            <p>Real-world solutions I've implemented for clients</p>
+            <h2>Portfolio</h2>
+            <p>Recent projects showcasing my DevOps and cloud infrastructure expertise</p>
           </div>
           
-          <div className="case-study">
-            <div className="case-study-header">
-              <img src={resqImage} alt="ResQ Platform" className="case-study-logo" />
-              <h3>ResQ Platform Infrastructure</h3>
-            </div>
-            <div className="case-study-content">
-              <div className="case-study-problem">
-                <h4>Challenge</h4>
-                <p>ResQ needed a scalable infrastructure for their appointment scheduling platform with real-time updates, but faced deployment delays and high operational costs.</p>
-              </div>
-              <div className="case-study-solution">
-                <h4>Solution</h4>
-                <ul>
-                  <li>Implemented GitHub Actions pipelines for automated deployments to both local VMs and AWS ECS</li>
-                  <li>Architected AWS infrastructure using Terraform with ECS clusters, ECR repositories, and ALB</li>
-                  <li>Configured Nginx for path-based routing to host React frontend and WordPress on the same domain</li>
-                  <li>Set up Twilio for branded RCS messaging and SMS/email notifications</li>
-                </ul>
-              </div>
-              <div className="case-study-results">
-                <h4>Results</h4>
-                <ul>
-                  <li>Reduced deployment time by 70%</li>
-                  <li>Enabled zero-downtime rolling deployments</li>
-                  <li>Improved customer experience with real-time notifications</li>
-                  <li>Optimized database performance, resolving high load issues</li>
-                </ul>
-              </div>
-              <div className="case-study-tech">
-                <h4>Technologies Used</h4>
-                <div className="tech-tags">
-                  <span>AWS ECS</span>
-                  <span>ECR</span>
-                  <span>EC2</span>
-                  <span>RDS</span>
-                  <span>ALB</span>
-                  <span>VPC</span>
-                  <span>Amplify</span>
-                  <span>S3</span>
-                  <span>CloudFront</span>
-                  <span>Terraform</span>
-                  <span>GitHub Actions</span>
-                  <span>Docker</span>
-                  <span>Nginx</span>
-                  <span>Ansible</span>
-                  <span>Twilio</span>
+          <div className="portfolio-grid">
+            <div className="portfolio-item animate-on-scroll">
+              <img src={resqImage} alt="ResQ Emergency Response Platform" className="portfolio-image" />
+              <div className="portfolio-content">
+                <h3>ResQ Emergency Response Platform</h3>
+                <p>Designed and implemented a scalable AWS infrastructure for an emergency response application, featuring high availability, real-time data processing, and robust security measures.</p>
+                <div className="portfolio-tags">
+                  <span className="portfolio-tag">AWS</span>
+                  <span className="portfolio-tag">Terraform</span>
+                  <span className="portfolio-tag">ECS</span>
+                  <span className="portfolio-tag">RDS</span>
+                  <span className="portfolio-tag">ElastiCache</span>
+                </div>
+                <div className="portfolio-links">
+                  <a href="#" className="upwork-btn upwork-btn-outline">View Details</a>
                 </div>
               </div>
-              <div className="case-study-cta">
-                <a href="https://stg-resq.kryptomind.net/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">
-                  <FaRocket className="upwork-btn-icon" /> View Live Project
-                </a>
-              </div>
             </div>
-          </div>
-          
-          <div className="case-study">
-            <div className="case-study-header">
-              <img src={trumptokenImage} alt="TheTrumpToken" className="case-study-logo" />
-              <h3>TheTrumpToken Infrastructure Optimization</h3>
-            </div>
-            <div className="case-study-content">
-              <div className="case-study-problem">
-                <h4>Challenge</h4>
-                <p>TheTrumpToken platform was experiencing performance degradation and intermittent outages, unable to handle growing user traffic.</p>
-              </div>
-              <div className="case-study-solution">
-                <h4>Solution</h4>
-                <ul>
-                  <li>Implemented auto-scaling policies based on custom metrics to handle traffic spikes</li>
-                  <li>Deployed frontend on AWS Amplify for continuous deployment and global content delivery</li>
-                  <li>Set up S3 bucket with CloudFront distribution for static assets and media content</li>
-                  <li>Created IAM user with limited access policies restricted to S3 bucket operations only</li>
-                </ul>
-              </div>
-              <div className="case-study-results">
-                <h4>Results</h4>
-                <ul>
-                  <li>Eliminated recurring outages</li>
-                  <li>Improved transaction processing speed by 40%</li>
-                  <li>Supported 3x user growth through optimized infrastructure</li>
-                  <li>Enhanced security posture with least privilege access</li>
-                </ul>
-              </div>
-              <div className="case-study-tech">
-                <h4>Technologies Used</h4>
-                <div className="tech-tags">
-                  <span>AWS EC2</span>
-                  <span>ECS</span>
-                  <span>CloudWatch</span>
-                  <span>Amplify</span>
-                  <span>S3</span>
-                  <span>CloudFront</span>
-                  <span>Terraform</span>
-                  <span>Docker</span>
+            
+            <div className="portfolio-item animate-on-scroll">
+              <img src={trumptokenImage} alt="TrumpToken Cryptocurrency Platform" className="portfolio-image" />
+              <div className="portfolio-content">
+                <h3>TrumpToken Cryptocurrency Platform</h3>
+                <p>Built a secure and scalable infrastructure for a cryptocurrency trading platform using AWS services, implementing CI/CD pipelines, automated scaling, and comprehensive monitoring.</p>
+                <div className="portfolio-tags">
+                  <span className="portfolio-tag">AWS</span>
+                  <span className="portfolio-tag">Docker</span>
+                  <span className="portfolio-tag">GitHub Actions</span>
+                  <span className="portfolio-tag">CloudFront</span>
+                  <span className="portfolio-tag">DynamoDB</span>
+                </div>
+                <div className="portfolio-links">
+                  <a href="#" className="upwork-btn upwork-btn-outline">View Details</a>
                 </div>
               </div>
-              <div className="case-study-cta">
-                <a href="https://thetrumptoken.com/" target="_blank" rel="noopener noreferrer" className="upwork-btn upwork-btn-outline">
-                  <FaRocket className="upwork-btn-icon" /> View Live Project
-                </a>
+            </div>
+            
+            <div className="portfolio-item animate-on-scroll">
+              <img src={cloudwatchLogAnalyzer} alt="CloudWatch Log Analyzer" className="portfolio-image" />
+              <div className="portfolio-content">
+                <h3>CloudWatch Log Analyzer</h3>
+                <p>Developed an automated log analysis tool that processes CloudWatch logs, identifies patterns, and generates actionable insights, reducing troubleshooting time by 70%.</p>
+                <div className="portfolio-tags">
+                  <span className="portfolio-tag">Python</span>
+                  <span className="portfolio-tag">Lambda</span>
+                  <span className="portfolio-tag">CloudWatch</span>
+                  <span className="portfolio-tag">Elasticsearch</span>
+                  <span className="portfolio-tag">Kibana</span>
+                </div>
+                <div className="portfolio-links">
+                  <a href="#" className="upwork-btn upwork-btn-outline">View Details</a>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="upwork-testimonials" className="upwork-section">
+        <div className="upwork-container">
+          <div className="upwork-section-header">
+            <h2>Testimonials</h2>
+            <p>What clients say about working with me</p>
+          </div>
           
-          <div className="case-study">
-            <div className="case-study-header">
-              <img src={cloudwatchLogAnalyzer} alt="CloudWatch Log Analyzer" className="case-study-logo" />
-              <h3>CloudWatch Log Analyzer</h3>
+          <div className="testimonials-container">
+            <div className="testimonial animate-on-scroll">
+              <p className="testimonial-content">
+                "Nabeel transformed our deployment process from a manual, error-prone task to a fully automated pipeline. His expertise in AWS and CI/CD has significantly improved our development workflow and system reliability."
+              </p>
+              <div className="testimonial-author">
+                <div className="testimonial-info">
+                  <h4>Michael Johnson</h4>
+                  <p>CTO, TechSolutions Inc.</p>
+                </div>
+              </div>
             </div>
-            <div className="case-study-content">
-              <div className="case-study-problem">
-                <h4>Challenge</h4>
-                <p>Client needed an efficient way to analyze AWS CloudWatch logs across multiple AWS profiles, but existing solutions were slow and lacked cross-account visibility.</p>
-              </div>
-              <div className="case-study-solution">
-                <h4>Solution</h4>
-                <ul>
-                  <li>Developed a robust Python application with Streamlit for interactive dashboards</li>
-                  <li>Implemented secure multi-profile selection system for seamless switching between AWS accounts</li>
-                  <li>Created dynamic visualizations for log patterns, error trends, and time-based analysis</li>
-                  <li>Engineered a Docker-based solution with optimized configuration for consistent deployment</li>
-                </ul>
-              </div>
-              <div className="case-study-results">
-                <h4>Results</h4>
-                <ul>
-                  <li>Reduced log analysis time by 80%</li>
-                  <li>Enabled cross-account visibility for faster troubleshooting</li>
-                  <li>Achieved minimal resource utilization (0.01% CPU)</li>
-                  <li>Enhanced security with proper IAM role support</li>
-                </ul>
-              </div>
-              <div className="case-study-tech">
-                <h4>Technologies Used</h4>
-                <div className="tech-tags">
-                  <span>Python</span>
-                  <span>Streamlit</span>
-                  <span>Pandas</span>
-                  <span>AWS SDK (boto3)</span>
-                  <span>Docker</span>
-                  <span>CloudWatch Logs API</span>
-                  <span>AWS IAM</span>
+            
+            <div className="testimonial animate-on-scroll">
+              <p className="testimonial-content">
+                "Working with Nabeel was a game-changer for our cloud infrastructure. He identified and implemented cost-saving measures that reduced our AWS bill by 35% while improving performance. His documentation and knowledge transfer were exceptional."
+              </p>
+              <div className="testimonial-author">
+                <div className="testimonial-info">
+                  <h4>Sarah Williams</h4>
+                  <p>DevOps Lead, DataStream Analytics</p>
                 </div>
               </div>
             </div>
@@ -299,7 +320,7 @@ const UpworkProfile = () => {
             <p>Explore sample code, architecture diagrams, and technical documentation</p>
           </div>
           <div className="resources-grid">
-            <div className="resource-card">
+            <div className="resource-card animate-on-scroll">
               <div className="resource-icon">
                 <FaCloud />
               </div>
@@ -317,7 +338,7 @@ const UpworkProfile = () => {
               </div>
             </div>
             
-            <div className="resource-card">
+            <div className="resource-card animate-on-scroll">
               <div className="resource-icon">
                 <FaCodeBranch />
               </div>
@@ -335,7 +356,7 @@ const UpworkProfile = () => {
               </div>
             </div>
             
-            <div className="resource-card">
+            <div className="resource-card animate-on-scroll">
               <div className="resource-icon">
                 <FaChartLine />
               </div>
@@ -360,30 +381,36 @@ const UpworkProfile = () => {
       <section id="upwork-contact" className="upwork-section">
         <div className="upwork-container">
           <div className="upwork-section-header">
-            <h2>Let's Work Together</h2>
-            <p>Ready to optimize your infrastructure and deployment process?</p>
+            <h2>Contact Me</h2>
+            <p>Let's discuss how I can help with your DevOps and cloud infrastructure needs</p>
           </div>
+          
           <div className="contact-grid">
-            <div className="contact-info">
-              <div className="contact-method">
-                <FaEnvelope size={32} />
-                <h3>Email</h3>
-                <p><a href="mailto:nabntan@gmail.com">nabntan@gmail.com</a></p>
-              </div>
-              <div className="contact-method">
-                <FaPhone size={32} />
-                <h3>Phone</h3>
-                <p><a href="tel:+923444527024">+92-344-4527024</a></p>
-              </div>
-              <div className="contact-method">
-                <FaLinkedin size={32} />
-                <h3>LinkedIn</h3>
-                <p><a href="https://linkedin.com/in/nabeel-sarfraz" target="_blank" rel="noreferrer">linkedin.com/in/nabeel-sarfraz</a></p>
-              </div>
-              <div className="contact-method">
-                <FaGithub size={32} />
-                <h3>GitHub</h3>
-                <p><a href="https://github.com/Nabeel-KM" target="_blank" rel="noreferrer">github.com/Nabeel-KM</a></p>
+            <div className="contact-info animate-on-scroll">
+              <h3>Get In Touch</h3>
+              <p>Feel free to reach out to discuss your project requirements or any questions you may have about my services.</p>
+              
+              <div className="contact-methods">
+                <div className="contact-method">
+                  <FaEnvelope size={32} />
+                  <h3>Email</h3>
+                  <p><a href="mailto:nabntan@gmail.com">nabntan@gmail.com</a></p>
+                </div>
+                <div className="contact-method">
+                  <FaPhone size={32} />
+                  <h3>Phone</h3>
+                  <p><a href="tel:+923444527024">+92-344-4527024</a></p>
+                </div>
+                <div className="contact-method">
+                  <FaLinkedin size={32} />
+                  <h3>LinkedIn</h3>
+                  <p><a href="https://linkedin.com/in/nabeel-sarfraz" target="_blank" rel="noreferrer">linkedin.com/in/nabeel-sarfraz</a></p>
+                </div>
+                <div className="contact-method">
+                  <FaGithub size={32} />
+                  <h3>GitHub</h3>
+                  <p><a href="https://github.com/Nabeel-KM" target="_blank" rel="noreferrer">github.com/Nabeel-KM</a></p>
+                </div>
               </div>
             </div>
           </div>
