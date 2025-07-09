@@ -267,81 +267,175 @@ const allProjects = [
 	},
 ];
 
-const Portfolio = () => {
-	const [filter, setFilter] = useState("all");
-	
-	const filteredProjects = filter === "all" 
-		? allProjects 
-		: allProjects.filter(project => project.category === filter);
+const getShortSummary = (description) => {
+  // Use the first non-empty, non-heading line as summary
+  for (let line of description) {
+    if (line && !line.endsWith(":") && !line.startsWith("•") && !line.startsWith("Technologies:")) {
+      return line;
+    }
+  }
+  // fallback
+  return description[0];
+};
 
-	return (
-		<section id="portfolio">
-			<h5>My Recent Work</h5>
-			<h2>Portfolio</h2>
-			
-			<div className="portfolio__filters">
-				<button 
-					className={filter === "all" ? "btn btn-primary" : "btn"} 
-					onClick={() => setFilter("all")}
-				>
-					All Projects
-				</button>
-				<button 
-					className={filter === "professional" ? "btn btn-primary" : "btn"} 
-					onClick={() => setFilter("professional")}
-				>
-					Professional
-				</button>
-				<button 
-					className={filter === "personal" ? "btn btn-primary" : "btn"} 
-					onClick={() => setFilter("personal")}
-				>
-					Personal/Open Source
-				</button>
-			</div>
-			
-			<div className="container portfolio__container">
-				{filteredProjects.map((project, idx) => (
-					<article className="portfolio__item" key={project.title}>
-						<div className="portfolio__item-image">
-							<img src={project.image} alt={project.title} />
-						</div>
-						<h3>{project.title}</h3>
-						<ul className="portfolio__item-description">
-							{project.description.map((desc, i) => (
-								<li key={i}>{desc}</li>
-							))}
-						</ul>
-						<div className="portfolio__item-cta">
-							{project.github !== "#" && (
-								<a
-									href={project.github}
-									className="btn"
-									target="_blank"
-									rel="noreferrer"
-								>
-									Github
-								</a>
-							)}
-							{project.demo !== "#" && (
-								<a
-									href={project.demo}
-									className="btn btn-primary"
-									target="_blank"
-									rel="noreferrer"
-								>
-									Live Demo
-								</a>
-							)}
-							{project.github === "#" && project.demo === "#" && (
-								<span className="portfolio__private-project">Private Project</span>
-							)}
-						</div>
-					</article>
-				))}
-			</div>
-		</section>
-	);
+const Portfolio = () => {
+  const [filter, setFilter] = useState("all");
+  const [expanded, setExpanded] = useState({}); // {title: bool}
+  const [showAll, setShowAll] = useState(false);
+
+  const filteredProjects = filter === "all"
+    ? allProjects
+    : allProjects.filter(project => project.category === filter);
+
+  // Show only first 6 unless showAll is true
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
+
+  // Split into two columns for desktop
+  const splitProjects = (projects) => {
+    const midpoint = Math.ceil(projects.length / 2);
+    return [projects.slice(0, midpoint), projects.slice(midpoint)];
+  };
+  const [leftCol, rightCol] = splitProjects(visibleProjects);
+
+  const handleToggle = (title) => {
+    setExpanded(prev => ({ ...prev, [title]: !prev[title] }));
+  };
+
+  return (
+    <section id="portfolio">
+      <h5>My Recent Work</h5>
+      <h2>Portfolio</h2>
+      <div className="portfolio__filters">
+        <button
+          className={filter === "all" ? "btn btn-primary" : "btn"}
+          onClick={() => { setFilter("all"); setShowAll(false); }}
+        >
+          All Projects
+        </button>
+        <button
+          className={filter === "professional" ? "btn btn-primary" : "btn"}
+          onClick={() => { setFilter("professional"); setShowAll(false); }}
+        >
+          Professional
+        </button>
+        <button
+          className={filter === "personal" ? "btn btn-primary" : "btn"}
+          onClick={() => { setFilter("personal"); setShowAll(false); }}
+        >
+          Personal/Open Source
+        </button>
+      </div>
+      <div className="container portfolio__container portfolio__container--split">
+        <div className="portfolio__column">
+          {leftCol.map((project) => (
+            <article className="portfolio__item" key={project.title}>
+              <div className="portfolio__item-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+              <h3>{project.title}</h3>
+              <p className="portfolio__item-summary">{getShortSummary(project.description)}</p>
+              {expanded[project.title] && (
+                <ul className="portfolio__item-description">
+                  {project.description.map((desc, i) => (
+                    <li key={i}>{desc}</li>
+                  ))}
+                </ul>
+              )}
+              <div className="portfolio__item-cta">
+                <button className="btn btn-sm" onClick={() => handleToggle(project.title)}>
+                  {expanded[project.title] ? "Show Less" : "Show More"}
+                </button>
+                {expanded[project.title] && (
+                  <>
+                    {project.github !== "#" && (
+                      <a
+                        href={project.github}
+                        className="btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Github
+                      </a>
+                    )}
+                    {project.demo !== "#" && (
+                      <a
+                        href={project.demo}
+                        className="btn btn-primary"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                    {project.github === "#" && project.demo === "#" && (
+                      <span className="portfolio__private-project">Private Project</span>
+                    )}
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="portfolio__column">
+          {rightCol.map((project) => (
+            <article className="portfolio__item" key={project.title}>
+              <div className="portfolio__item-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+              <h3>{project.title}</h3>
+              <p className="portfolio__item-summary">{getShortSummary(project.description)}</p>
+              {expanded[project.title] && (
+                <ul className="portfolio__item-description">
+                  {project.description.map((desc, i) => (
+                    <li key={i}>{desc}</li>
+                  ))}
+                </ul>
+              )}
+              <div className="portfolio__item-cta">
+                <button className="btn btn-sm" onClick={() => handleToggle(project.title)}>
+                  {expanded[project.title] ? "Show Less" : "Show More"}
+                </button>
+                {expanded[project.title] && (
+                  <>
+                    {project.github !== "#" && (
+                      <a
+                        href={project.github}
+                        className="btn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Github
+                      </a>
+                    )}
+                    {project.demo !== "#" && (
+                      <a
+                        href={project.demo}
+                        className="btn btn-primary"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                    {project.github === "#" && project.demo === "#" && (
+                      <span className="portfolio__private-project">Private Project</span>
+                    )}
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+      {filteredProjects.length > 6 && (
+        <div className="portfolio__showall-btn-wrapper">
+          <button className="btn btn-outline" onClick={() => setShowAll(v => !v)}>
+            {showAll ? "Show Less" : `Show All Projects (${filteredProjects.length})`}
+          </button>
+        </div>
+      )}
+    </section>
+  );
 };
 
 export default Portfolio;

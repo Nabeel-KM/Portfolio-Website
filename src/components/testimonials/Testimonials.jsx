@@ -14,13 +14,13 @@ import "swiper/css/pagination";
 
 const data = [
   {
-    avatar: AVTR1,
+    avatar: AVTR2,
     name: "Ali Raza (CTO, Kryptomind)",
     review:
       "Nabeel is a highly skilled DevOps engineer who transformed our cloud infrastructure and CI/CD pipelines. His expertise in automation and monitoring has greatly improved our deployment speed and reliability.",
   },
   {
-    avatar: AVTR2,
+    avatar: AVTR1,
     name: "Sarah Khan (Project Manager, Freelance Client)",
     review:
       "Working with Nabeel was a fantastic experience. He automated our AWS deployments and set up centralized logging, making our operations seamless and transparent. Highly recommended!",

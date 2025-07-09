@@ -62,8 +62,8 @@
 
 /* Light mode variables - will be applied when data-theme="light" is set on body */
 [data-theme="light"] {
-  --color-bg: #f8f9fa;
-  --color-bg-variant: #e9ecef;
+  --color-bg: #f4f6fb; /* Softer, warmer off-white */
+  --color-bg-variant: #e3e7ef; /* Softer variant */
   --color-primary: #0070f3;
   --color-primary-variant: rgba(0, 112, 243, 0.4);
   --color-white: #212529;

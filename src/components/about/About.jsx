@@ -204,16 +204,16 @@ const About = () => {
           <div className="skill-group">
             <h4>Terraform</h4>
             <div className="skill-bar">
-              <div className="skill-progress" data-percentage="90"></div>
-              <span className="skill-percentage">90%</span>
+              <div className="skill-progress" data-percentage="85"></div>
+              <span className="skill-percentage">85%</span>
             </div>
           </div>
           
           <div className="skill-group">
             <h4>Docker</h4>
             <div className="skill-bar">
-              <div className="skill-progress" data-percentage="85"></div>
-              <span className="skill-percentage">85%</span>
+              <div className="skill-progress" data-percentage="95"></div>
+              <span className="skill-percentage">95%</span>
             </div>
           </div>
           
