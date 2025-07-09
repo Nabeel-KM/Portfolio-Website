@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./about.css";
 import ME from "../../assets/me-about.jpg";
-import { FaAward, FaCloudUploadAlt, FaTools, FaShieldAlt, FaSearchDollar, FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaAward, FaCloudUploadAlt, FaTools, FaShieldAlt, FaSearchDollar, FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt, FaChevronDown } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
 import { BiCodeAlt } from "react-icons/bi";
@@ -9,6 +9,7 @@ import { MdMonitor } from "react-icons/md";
 
 const About = () => {
   const skillsRef = useRef(null);
+  const [showAllSkills, setShowAllSkills] = useState(false);
   
   useEffect(() => {
     // Set up skill bars animation
@@ -28,6 +29,20 @@ const About = () => {
       skillBars.forEach(bar => observer.observe(bar));
     }
   }, []);
+
+  // Core skills to always show
+  const coreSkills = [
+    { name: "Cloud Platforms", items: ["AWS (EC2, ECS, S3, Lambda, VPC, IAM, Route 53, CloudFront)", "DigitalOcean"] },
+    { name: "Infrastructure as Code", items: ["Terraform (modules, workspaces, remote state)", "AWS CloudFormation"] },
+    { name: "CI/CD & DevOps Tools", items: ["GitHub Actions", "Jenkins", "Docker, Docker Compose"] }
+  ];
+
+  // Additional skills to show when expanded
+  const additionalSkills = [
+    { name: "Configuration Management", items: ["Ansible (playbooks, roles, collections)", "Bash scripting"] },
+    { name: "Containerization & Orchestration", items: ["Docker, Docker Compose", "AWS ECS", "Container security, multi-stage builds"] },
+    { name: "Monitoring & Logging", items: ["ELK Stack (Elasticsearch, Logstash, Kibana)", "AWS CloudWatch (Logs, Metrics, Alarms)", "Grafana"] }
+  ];
 
   return (
     <section id="about" className="animate-on-scroll">
@@ -103,9 +118,6 @@ const About = () => {
             <p>
               Demonstrated expertise in designing and implementing scalable, secure, and cost-efficient cloud solutions for high-traffic applications. 
               Proven track record of reducing deployment times by 70% and infrastructure costs by 35% through automation and optimization.
-            </p>
-            <p>
-              Passionate about cloud-native architectures, Infrastructure as Code, and enabling cross-team collaboration to drive business outcomes.
             </p>
           </div>
 
@@ -212,92 +224,42 @@ const About = () => {
               <span className="skill-percentage">88%</span>
             </div>
           </div>
-          
-          <div className="skill-group">
-            <h4>Python</h4>
-            <div className="skill-bar">
-              <div className="skill-progress" data-percentage="80"></div>
-              <span className="skill-percentage">80%</span>
-            </div>
-          </div>
-          
-          <div className="skill-group">
-            <h4>Linux</h4>
-            <div className="skill-bar">
-              <div className="skill-progress" data-percentage="92"></div>
-              <span className="skill-percentage">92%</span>
-            </div>
-          </div>
-          
-          <div className="skill-group">
-            <h4>Monitoring & Logging</h4>
-            <div className="skill-bar">
-              <div className="skill-progress" data-percentage="85"></div>
-              <span className="skill-percentage">85%</span>
-            </div>
-          </div>
-          
-          <div className="skill-group">
-            <h4>Security Best Practices</h4>
-            <div className="skill-bar">
-              <div className="skill-progress" data-percentage="82"></div>
-              <span className="skill-percentage">82%</span>
-            </div>
-          </div>
         </div>
         
         <div className="about__skills-grid">
-          <div className="about__skill-category">
-            <h4>Cloud Platforms</h4>
-            <ul>
-              <li>AWS (EC2, ECS, ECR, S3, Lambda, VPC, IAM, Route 53, Amplify, CloudFront, CloudWatch)</li>
-              <li>DigitalOcean</li>
-            </ul>
-          </div>
+          {/* Always show core skills */}
+          {coreSkills.map((skill, index) => (
+            <div key={`core-${index}`} className="about__skill-category">
+              <h4>{skill.name}</h4>
+              <ul>
+                {skill.items.map((item, i) => (
+                  <li key={`core-item-${i}`}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
           
-          <div className="about__skill-category">
-            <h4>Infrastructure as Code</h4>
-            <ul>
-              <li>Terraform (modules, workspaces, remote state)</li>
-              <li>AWS CloudFormation</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Configuration Management</h4>
-            <ul>
-              <li>Ansible (playbooks, roles, collections)</li>
-              <li>Bash scripting</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>CI/CD & DevOps Tools</h4>
-            <ul>
-              <li>GitHub Actions</li>
-              <li>Jenkins</li>
-              <li>Docker, Docker Compose</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Containerization & Orchestration</h4>
-            <ul>
-              <li>Docker, Docker Compose</li>
-              <li>AWS ECS</li>
-              <li>Container security, multi-stage builds</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Monitoring & Logging</h4>
-            <ul>
-              <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>
-              <li>Filebeat, Metricbeat</li>
-              <li>AWS CloudWatch (Logs, Metrics, Alarms)</li>
-              <li>Grafana</li>
-            </ul>
-          </div>
+          {/* Show additional skills when expanded */}
+          {showAllSkills && additionalSkills.map((skill, index) => (
+            <div key={`additional-${index}`} className="about__skill-category animate-fade-in visible">
+              <h4>{skill.name}</h4>
+              <ul>
+                {skill.items.map((item, i) => (
+                  <li key={`additional-item-${i}`}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        
+        <div className="skills-toggle">
+          <button 
+            className="skills-toggle-btn"
+            onClick={() => setShowAllSkills(!showAllSkills)}
+          >
+            {showAllSkills ? 'Show Less' : 'Show More Skills'} 
+            <FaChevronDown className={showAllSkills ? 'rotate-icon' : ''} />
+          </button>
         </div>
       </div>
 
@@ -329,20 +291,6 @@ const About = () => {
             <div className="education-content">
               <h4>AWS Technical Essentials</h4>
               <p className="education-institution">AWS Training and Certification</p>
-            </div>
-          </div>
-          
-          <div className="about__education-item card">
-            <div className="education-content">
-              <h4>Docker and Kubernetes: The Complete Guide</h4>
-              <p className="education-institution">Udemy</p>
-            </div>
-          </div>
-          
-          <div className="about__education-item card">
-            <div className="education-content">
-              <h4>Terraform for AWS - Beginner to Advanced</h4>
-              <p className="education-institution">Udemy</p>
             </div>
           </div>
         </div>
