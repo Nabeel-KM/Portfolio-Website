@@ -1,20 +1,29 @@
 footer {
-    background: var(--color-primary);
-    padding: 3rem 0;
+    background: var(--color-bg-variant);
+    padding: 3rem 0 1rem;
     text-align: center;
     font-size: 0.9rem;
     margin-top: 7rem;
+    border-top: 1px solid rgba(77, 181, 255, 0.2);
 }
 
-footer a{
-    color: var(--color-bg);
+footer a {
+    color: var(--color-white);
+    transition: all var(--speed-normal) ease;
 }
 
 .footer__logo {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 2rem;
     display: inline-block;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+}
+
+.footer__logo:hover {
+    color: var(--color-white);
+    transform: translateY(-3px);
 }
 
 .permalinks {
@@ -23,43 +32,77 @@ footer a{
     justify-content: center;
     gap: 2rem;
     margin: 0 auto 3rem;
+    padding: 0;
 }
 
-.footer__socials{
+.permalinks li {
+    list-style: none;
+}
+
+.permalinks a {
+    color: var(--color-light);
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.permalinks a:hover {
+    color: var(--color-primary);
+}
+
+.permalinks a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width var(--speed-normal) ease;
+}
+
+.permalinks a:hover::after {
+    width: 100%;
+}
+
+.footer__socials {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.footer__socials a{
+.footer__socials a {
     background: var(--color-bg);
-    color: var(--color-white);
+    color: var(--color-primary);
     padding: 0.8rem;
     border-radius: 0.7rem;
     display: flex;
     border: 1px solid transparent;
+    transition: all var(--speed-normal) ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .footer__socials a:hover {
-    background: transparent;
+    background: var(--color-primary);
     color: var(--color-bg);
-    border-color: var(--color-bg);
+    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 .footer__copyright {
-    margin-bottom: 4rem;
-    color: var(--color-bg);
+    margin-bottom: 1rem;
+    color: var(--color-light);
+    font-size: 0.8rem;
 }
 
-
 @media screen and (max-width: 600px) {
-    .permalinks{
+    .permalinks {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
-    .footer__socials{
-        margin-bottom: 2.6rem;
+    .footer__socials {
+        margin-bottom: 2rem;
     }
 }

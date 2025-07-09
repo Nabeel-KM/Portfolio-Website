@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./experience.css";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { FaAws, FaDocker, FaGithub, FaJenkins } from "react-icons/fa";
@@ -9,6 +9,15 @@ import { AiOutlineBug } from "react-icons/ai";
 
 const Experience = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [animateItems, setAnimateItems] = useState(false);
+
+  // Trigger animation when category changes
+  useEffect(() => {
+    setAnimateItems(false);
+    setTimeout(() => {
+      setAnimateItems(true);
+    }, 50);
+  }, [activeCategory]);
 
   const categories = {
     all: "All Responsibilities",
@@ -88,12 +97,23 @@ const Experience = () => {
     return responsibilities[activeCategory];
   };
 
+  // Split responsibilities into two columns
+  const splitResponsibilities = (items) => {
+    const midpoint = Math.ceil(items.length / 2);
+    return [
+      items.slice(0, midpoint),
+      items.slice(midpoint)
+    ];
+  };
+
+  const [leftColumn, rightColumn] = splitResponsibilities(getResponsibilities());
+
   return (
-    <section id="experience">
-      <h5>What I've Been Doing</h5>
-      <h2>My Experience</h2>
+    <section id="experience" className="animate-on-scroll">
+      <h5 className="section-subtitle">What I've Been Doing</h5>
+      <h2 className="section-title">My Experience</h2>
       
-      <div className="experience__header">
+      <div className="experience__header animate-on-scroll">
         <h3>DevOps Engineer | Kryptomind LLC</h3>
         <p className="experience__period">May 2023 – Present (1.5+ years)</p>
         
@@ -106,19 +126,19 @@ const Experience = () => {
         <div className="experience__achievements">
           <h4>Key Achievements</h4>
           <div className="experience__achievements-grid">
-            <div className="experience__achievement-card">
+            <div className="experience__achievement-card card">
               <h5>70%</h5>
               <p>Reduction in deployment time through CI/CD automation</p>
             </div>
-            <div className="experience__achievement-card">
+            <div className="experience__achievement-card card">
               <h5>35%</h5>
               <p>Decrease in cloud infrastructure costs through optimization</p>
             </div>
-            <div className="experience__achievement-card">
+            <div className="experience__achievement-card card">
               <h5>99.95%</h5>
               <p>System uptime achieved through robust monitoring and automation</p>
             </div>
-            <div className="experience__achievement-card">
+            <div className="experience__achievement-card card">
               <h5>65%</h5>
               <p>Reduction in incident response time through systematic troubleshooting</p>
             </div>
@@ -126,7 +146,7 @@ const Experience = () => {
         </div>
       </div>
       
-      <div className="experience__categories">
+      <div className="experience__categories animate-on-scroll">
         {Object.entries(categories).map(([key, value]) => (
           <button
             key={key}
@@ -140,19 +160,32 @@ const Experience = () => {
       </div>
       
       <div className="experience__container">
-        <div className="experience__content">
-          <ul>
-            {getResponsibilities().map((responsibility, index) => (
-              <li key={index} className="experience__item">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <p>{responsibility}</p>
-              </li>
-            ))}
-          </ul>
+        <div className={`experience__content ${animateItems ? 'animate-items' : ''}`}>
+          <div className="experience__column">
+            <ul>
+              {leftColumn.map((responsibility, index) => (
+                <li key={`left-${index}`} className="experience__item">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <p>{responsibility}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="experience__column">
+            <ul>
+              {rightColumn.map((responsibility, index) => (
+                <li key={`right-${index}`} className="experience__item">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <p>{responsibility}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       
-      <div className="experience__technologies">
+      <div className="experience__technologies animate-on-scroll">
         <h4>Technologies Used</h4>
         <div className="experience__tech-grid">
           <div className="experience__tech-item">
