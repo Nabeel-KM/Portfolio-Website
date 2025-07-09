@@ -28,7 +28,7 @@ const Nav = () => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (scrollY >= (sectionTop - sectionHeight / 3)) {
+        if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
           current = '#' + section.getAttribute('id');
         }
       });
