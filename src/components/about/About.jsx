@@ -1,66 +1,94 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./about.css";
 import ME from "../../assets/me-about.jpg";
-import { FaAward } from "react-icons/fa";
+import { FaAward, FaCloudUploadAlt, FaTools, FaShieldAlt, FaSearchDollar, FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
-import { FaCloudUploadAlt, FaTools, FaShieldAlt, FaSearchDollar } from "react-icons/fa";
 import { BiCodeAlt } from "react-icons/bi";
 import { MdMonitor } from "react-icons/md";
 
 const About = () => {
-  return (
-    <section id="about">
-      <h5>Get To Know</h5>
-      <h2>About Me</h2>
+  const skillsRef = useRef(null);
+  
+  useEffect(() => {
+    // Set up skill bars animation
+    if (skillsRef.current) {
+      const skillBars = skillsRef.current.querySelectorAll('.skill-bar');
       
-      <div className="about__profile-header">
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const progressBar = entry.target.querySelector('.skill-progress');
+            const percentage = progressBar.getAttribute('data-percentage');
+            progressBar.style.width = percentage + '%';
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      skillBars.forEach(bar => observer.observe(bar));
+    }
+  }, []);
+
+  return (
+    <section id="about" className="animate-on-scroll">
+      <h5 className="section-subtitle">Get To Know</h5>
+      <h2 className="section-title">About Me</h2>
+      
+      <div className="about__profile-header animate-on-scroll">
         <h3>Nabeel Sarfraz</h3>
-        <h4>DevOps Engineer</h4>
+        <h4>DevOps Engineer & Cloud Architect</h4>
         
         <div className="about__contact-info">
-          <span role="img" aria-label="location">📍</span>{" "}
-          Lahore, Pakistan &nbsp;|&nbsp;
-          <span role="img" aria-label="phone">📞</span>{" "}
-          <a href="tel:+923444527024">+92-344-4527024</a>{" "}
-          &nbsp;|&nbsp;
-          <span role="img" aria-label="email">📧</span>{" "}
-          <a href="mailto:nabntan@gmail.com">nabntan@gmail.com</a>{" "}
-          &nbsp;|&nbsp;
-          <span role="img" aria-label="linkedin">🔗</span>{" "}
-          <a href="https://linkedin.com/in/nabeel-sarfraz" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/nabeel-sarfraz
-          </a>
-          &nbsp;|&nbsp;
-          <span role="img" aria-label="github">💻</span>{" "}
-          <a href="https://github.com/Nabeel-KM" target="_blank" rel="noopener noreferrer">
-            github.com/Nabeel-KM
-          </a>
+          <div className="contact-item">
+            <FaMapMarkerAlt className="contact-icon" />
+            <span>Lahore, Pakistan</span>
+          </div>
+          <div className="contact-item">
+            <FaPhone className="contact-icon" />
+            <a href="tel:+923444527024">+92-344-4527024</a>
+          </div>
+          <div className="contact-item">
+            <FaEnvelope className="contact-icon" />
+            <a href="mailto:nabntan@gmail.com">nabntan@gmail.com</a>
+          </div>
+          <div className="contact-item">
+            <FaLinkedin className="contact-icon" />
+            <a href="https://linkedin.com/in/nabeel-sarfraz" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/nabeel-sarfraz
+            </a>
+          </div>
+          <div className="contact-item">
+            <FaGithub className="contact-icon" />
+            <a href="https://github.com/Nabeel-KM" target="_blank" rel="noopener noreferrer">
+              github.com/Nabeel-KM
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="container about__container">
-        <div className="about__me">
+        <div className="about__me animate-on-scroll">
           <div className="about__me-image">
             <img src={ME} alt="Nabeel Sarfraz" />
+            <div className="image-backdrop"></div>
           </div>
         </div>
 
-        <div className="about__content">
+        <div className="about__content animate-on-scroll">
           <div className="about__cards">
-            <article className="about__card">
+            <article className="about__card card">
               <FaAward className="about__icon" />
               <h5>Experience</h5>
               <small>1.5+ Years Working</small>
             </article>
 
-            <article className="about__card">
+            <article className="about__card card">
               <FiUsers className="about__icon" />
               <h5>Clients</h5>
               <small>10+ Enterprise Projects</small>
             </article>
 
-            <article className="about__card">
+            <article className="about__card card">
               <VscFolderLibrary className="about__icon" />
               <h5>Projects</h5>
               <small>15+ Deployments</small>
@@ -81,56 +109,63 @@ const About = () => {
             </p>
           </div>
 
-          <a href="#contact" className="btn btn-primary">
-            Let's Talk
+          <a href="#contact" className="btn btn-primary btn-with-icon">
+            <FaEnvelope className="btn-icon" />
+            <span>Let's Talk</span>
           </a>
         </div>
       </div>
 
       {/* Career Objective */}
-      <div className="about__career-objective">
-        <h3>Career Objective</h3>
+      <div className="about__career-objective animate-on-scroll">
+        <div className="section-header">
+          <h3>Career Objective</h3>
+          <div className="section-header-line"></div>
+        </div>
         <p>
           To leverage my DevOps expertise in building resilient, scalable cloud infrastructure while continuously expanding my knowledge in emerging technologies like Kubernetes, serverless architectures, and infrastructure automation.
         </p>
       </div>
 
       {/* Core Competencies Section */}
-      <div className="about__competencies-section">
-        <h3>Core Competencies</h3>
+      <div className="about__competencies-section animate-on-scroll">
+        <div className="section-header">
+          <h3>Core Competencies</h3>
+          <div className="section-header-line"></div>
+        </div>
         
         <div className="about__competencies-grid">
-          <div className="about__competency-card">
+          <div className="about__competency-card card">
             <FaCloudUploadAlt className="about__competency-icon" />
             <h4>Cloud Architecture</h4>
             <p>AWS infrastructure design, multi-environment deployments, high availability systems, disaster recovery</p>
           </div>
           
-          <div className="about__competency-card">
+          <div className="about__competency-card card">
             <BiCodeAlt className="about__competency-icon" />
             <h4>Infrastructure as Code</h4>
             <p>Terraform modules, CloudFormation, reusable infrastructure patterns, version-controlled infrastructure</p>
           </div>
           
-          <div className="about__competency-card">
+          <div className="about__competency-card card">
             <FaTools className="about__competency-icon" />
             <h4>CI/CD Pipelines</h4>
             <p>GitHub Actions, Jenkins, zero-downtime deployments, automated testing</p>
           </div>
           
-          <div className="about__competency-card">
+          <div className="about__competency-card card">
             <MdMonitor className="about__competency-icon" />
             <h4>Monitoring & Observability</h4>
             <p>ELK Stack, CloudWatch, centralized logging, alerting, performance optimization</p>
           </div>
           
-          <div className="about__competency-card">
+          <div className="about__competency-card card">
             <FaShieldAlt className="about__competency-icon" />
             <h4>Security & Compliance</h4>
             <p>IAM, secrets management, vulnerability scanning, SSL/TLS, security best practices</p>
           </div>
           
-          <div className="about__competency-card">
+          <div className="about__competency-card card">
             <FaSearchDollar className="about__competency-icon" />
             <h4>Advanced Troubleshooting</h4>
             <p>Root cause analysis, system diagnostics, performance optimization, incident response</p>
@@ -139,8 +174,77 @@ const About = () => {
       </div>
 
       {/* Technical Skills Section */}
-      <div className="about__skills-section">
-        <h3>Technical Skills</h3>
+      <div className="about__skills-section animate-on-scroll" ref={skillsRef}>
+        <div className="section-header">
+          <h3>Technical Skills</h3>
+          <div className="section-header-line"></div>
+        </div>
+        
+        <div className="skills-container">
+          <div className="skill-group">
+            <h4>AWS Cloud</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="95"></div>
+              <span className="skill-percentage">95%</span>
+            </div>
+          </div>
+          
+          <div className="skill-group">
+            <h4>Terraform</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="90"></div>
+              <span className="skill-percentage">90%</span>
+            </div>
+          </div>
+          
+          <div className="skill-group">
+            <h4>Docker</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="85"></div>
+              <span className="skill-percentage">85%</span>
+            </div>
+          </div>
+          
+          <div className="skill-group">
+            <h4>CI/CD Pipelines</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="88"></div>
+              <span className="skill-percentage">88%</span>
+            </div>
+          </div>
+          
+          <div className="skill-group">
+            <h4>Python</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="80"></div>
+              <span className="skill-percentage">80%</span>
+            </div>
+          </div>
+          
+          <div className="skill-group">
+            <h4>Linux</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="92"></div>
+              <span className="skill-percentage">92%</span>
+            </div>
+          </div>
+          
+          <div className="skill-group">
+            <h4>Monitoring & Logging</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="85"></div>
+              <span className="skill-percentage">85%</span>
+            </div>
+          </div>
+          
+          <div className="skill-group">
+            <h4>Security Best Practices</h4>
+            <div className="skill-bar">
+              <div className="skill-progress" data-percentage="82"></div>
+              <span className="skill-percentage">82%</span>
+            </div>
+          </div>
+        </div>
         
         <div className="about__skills-grid">
           <div className="about__skill-category">
@@ -194,91 +298,52 @@ const About = () => {
               <li>Grafana</li>
             </ul>
           </div>
-          
-          <div className="about__skill-category">
-            <h4>Programming & Scripting</h4>
-            <ul>
-              <li>Python (boto3, Pandas, Streamlit)</li>
-              <li>Bash</li>
-              <li>YAML, JSON, HCL (Terraform)</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Databases</h4>
-            <ul>
-              <li>MySQL, PostgreSQL</li>
-              <li>MongoDB</li>
-              <li>AWS RDS</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Security & Compliance</h4>
-            <ul>
-              <li>IAM policies, least privilege principles</li>
-              <li>Secrets management (AWS Secrets Manager, Parameter Store)</li>
-              <li>Vulnerability scanning</li>
-              <li>SSL/TLS, backup automation</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Web & Application Servers</h4>
-            <ul>
-              <li>Nginx, Apache</li>
-              <li>Application Load Balancers</li>
-              <li>Path-based routing</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Cost Optimization</h4>
-            <ul>
-              <li>Resource rightsizing</li>
-              <li>Auto-scaling strategies</li>
-              <li>S3 lifecycle policies</li>
-            </ul>
-          </div>
-          
-          <div className="about__skill-category">
-            <h4>Version Control</h4>
-            <ul>
-              <li>Git</li>
-              <li>GitHub, GitLab</li>
-            </ul>
-          </div>
         </div>
       </div>
 
       {/* Education Section */}
-      <div className="about__education-section">
-        <h3>Education & Certifications</h3>
+      <div className="about__education-section animate-on-scroll">
+        <div className="section-header">
+          <h3>Education & Certifications</h3>
+          <div className="section-header-line"></div>
+        </div>
         
         <div className="about__education-grid">
-          <div className="about__education-item">
-            <h4>Diploma in Computer Science – DevOps & Serverless</h4>
-            <p>Systems Limited | 2023 – 2024</p>
+          <div className="about__education-item card">
+            <div className="education-content">
+              <h4>Diploma in Computer Science – DevOps & Serverless</h4>
+              <p className="education-institution">Systems Limited</p>
+              <p className="education-year">2023 – 2024</p>
+            </div>
           </div>
           
-          <div className="about__education-item">
-            <h4>BSc Mechanical Engineering</h4>
-            <p>UET Lahore | 2013 – 2017</p>
+          <div className="about__education-item card">
+            <div className="education-content">
+              <h4>BSc Mechanical Engineering</h4>
+              <p className="education-institution">UET Lahore</p>
+              <p className="education-year">2013 – 2017</p>
+            </div>
           </div>
           
-          <div className="about__education-item">
-            <h4>AWS Technical Essentials</h4>
-            <p>AWS Training and Certification</p>
+          <div className="about__education-item card">
+            <div className="education-content">
+              <h4>AWS Technical Essentials</h4>
+              <p className="education-institution">AWS Training and Certification</p>
+            </div>
           </div>
           
-          <div className="about__education-item">
-            <h4>Docker and Kubernetes: The Complete Guide</h4>
-            <p>Udemy</p>
+          <div className="about__education-item card">
+            <div className="education-content">
+              <h4>Docker and Kubernetes: The Complete Guide</h4>
+              <p className="education-institution">Udemy</p>
+            </div>
           </div>
           
-          <div className="about__education-item">
-            <h4>Terraform for AWS - Beginner to Advanced</h4>
-            <p>Udemy</p>
+          <div className="about__education-item card">
+            <div className="education-content">
+              <h4>Terraform for AWS - Beginner to Advanced</h4>
+              <p className="education-institution">Udemy</p>
+            </div>
           </div>
         </div>
       </div>
