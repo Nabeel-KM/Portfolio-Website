@@ -41,7 +41,11 @@ const About = () => {
   const additionalSkills = [
     { name: "Configuration Management", items: ["Ansible (playbooks, roles, collections)", "Bash scripting"] },
     { name: "Containerization & Orchestration", items: ["Docker, Docker Compose", "AWS ECS", "Container security, multi-stage builds"] },
-    { name: "Monitoring & Logging", items: ["ELK Stack (Elasticsearch, Logstash, Kibana)", "AWS CloudWatch (Logs, Metrics, Alarms)", "Grafana"] }
+    { name: "Monitoring & Logging", items: ["ELK Stack (Elasticsearch, Logstash, Kibana)", "AWS CloudWatch (Logs, Metrics, Alarms)", "Grafana"] },
+    // New skills
+    { name: "Database Administration", items: ["Microsoft SQL Server", "MySQL", "PostgreSQL", "MongoDB"] },
+    { name: "Version Control", items: ["GIT", "Github"] },
+    { name: "Development Tools", items: ["Visual Studio 2022", "Visual Studio Code", "Dev C++", "SQL Server Management Studio", "Balsamiq", "Microsoft Office"] },
   ];
 
   return (

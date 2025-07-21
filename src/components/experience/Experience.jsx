@@ -37,12 +37,14 @@ const Experience = () => {
     infrastructure: [
       "Designed and managed AWS production infrastructure using modular Terraform modules, ensuring scalability, security, and cost-efficiency.",
       "Orchestrated AWS ECS clusters for microservices with secure routing, custom domains, and DNS management via Route 53.",
-      "Led cost optimization initiatives resulting in 35% cloud spend reduction through resource rightsizing, auto-scaling, and lifecycle policies."
+      "Led cost optimization initiatives resulting in 35% cloud spend reduction through resource rightsizing, auto-scaling, and lifecycle policies.",
+      "Hands-on database administration: setup and maintenance for SQL and NoSQL databases (Microsoft SQL Server, MySQL, PostgreSQL, MongoDB)",
     ],
     cicd: [
       "Engineered 10+ CI/CD pipelines (GitHub Actions, Jenkins) for zero-downtime deployments, reducing deployment time by 70%.",
       "Developed Ansible playbooks for automated server provisioning and application deployment, reducing manual intervention.",
-      "Automated secrets management using AWS Secrets Manager and SSM Parameter Store, enhancing security and deployment flexibility."
+      "Automated secrets management using AWS Secrets Manager and SSM Parameter Store, enhancing security and deployment flexibility.",
+      "Implemented Slack and Discord notifications for deployment status and incident alerts.",
     ],
     containerization: [
       "Containerized microservices using Docker with optimized multi-stage builds, reducing image sizes by 60%.",

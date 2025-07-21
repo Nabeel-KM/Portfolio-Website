@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaDownload, FaEnvelope, FaBriefcase } from "react-icons/fa";
 // Use the updated resume file
-import CV from "../../assets/Nabeel_Sarfraz_DevOps_Engineer_Resume.pdf";
+import CV from "../../assets/Nabeel_Sarfraz_Resume.pdf";
 
 const CTA = () => {
   return (
