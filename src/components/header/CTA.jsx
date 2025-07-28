@@ -7,7 +7,7 @@ import { FaDownload, FaEnvelope, FaBriefcase } from "react-icons/fa";
 const CTA = () => {
   return (
     <div className="cta">
-      <a href="/Nabeel_Sarfraz_Resume.pdf" download className="btn btn-secondary btn-with-icon">
+      <a href="/Nabeel_Resume.pdf" download className="btn btn-secondary btn-with-icon">
         <FaDownload className="btn-icon" /> 
         <span>Download Resume</span>
       </a>
